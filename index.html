@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        .slots {
+            display: table;
+            border-collapse: separate;
+            border-spacing: 4px;
+        }
+        
+        .line {
+            display: table-row;
+        }
+
+        .slot {
+            display: table-cell;
+            background-color: red;
+            border: 1px solid black;
+            width: 40px;
+            height: 40px;
+        }
+
+        #blank {
+            background-color: transparent;
+            border: none;
+        }
+    </style>
+    <head>
+        <meta charset="utf-8">
+        <title>Page</title>
+    </head>
+    <body>
+        <div class="slots"> <!-- 전체 틀 -->
+            <div class="line" id="first_line"> <!-- 첫째 줄 --> 
+                <div class="slot" id="ring_1"></div>
+                <div class="slot" id="blank"></div>
+                <div class="slot" id="cap"></div>
+                <div class="slot" id="blank"></div>
+                <div class="slot" id="emblem"></div>
+            </div>
+            <div class="line" id="first_line"> <!-- 둘째 줄 --> 
+                <div class="slot" id="ring_2"></div>
+                <div class="slot" id="pendant_1"></div>
+                <div class="slot" id="fore_head"></div>
+                <div class="slot" id="blank"></div>
+                <div class="slot" id="badge"></div>
+            </div>
+            <div class="line" id="first_line"> <!-- 셋째 줄 --> 
+                <div class="slot" id="ring_3"></div>
+                <div class="slot" id="pendant_2"></div>
+                <div class="slot" id="eye_acc"></div>
+                <div class="slot" id="ear_acc"></div>
+                <div class="slot" id="medal"></div>
+            </div>
+            <div class="line" id="first_line"> <!-- 넷째 줄 --> 
+                <div class="slot" id="ring_4"></div>
+                <div class="slot" id="weapon"></div>
+                <div class="slot" id="top"></div>
+                <div class="slot" id="shoulder"></div>
+                <div class="slot" id="sub_weapon"></div>
+            </div>
+            <div class="line" id="first_line"> <!-- 다섯째 줄 --> 
+                <div class="slot" id="pocket"></div>
+                <div class="slot" id="belt"></div>
+                <div class="slot" id="bottom"></div>
+                <div class="slot" id="gloves"></div>
+                <div class="slot" id="cape"></div>
+            </div>
+            <div class="line" id="first_line"> <!-- 여섯째 줄 --> 
+                <div class="slot" id="blank""></div>
+                <div class="slot" id="blank"></div>
+                <div class="slot" id="shoes"></div>
+                <div class="slot" id="android"></div>
+                <div class="slot" id="heart"></div>
+            </div>
+        </div>
+    </body>
+</html>
