@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <style>
+        /* 전체 틀 */
         .slots {
             display: table;
             border-collapse: separate;
@@ -17,61 +18,145 @@
             border: 1px solid black;
             width: 40px;
             height: 40px;
+            font-size: 0;
         }
 
-        #blank {
+        .slot_blank {
+            display: table-cell;
             background-color: transparent;
             border: none;
+            width: 40px;
+            height: 40px;
+        }
+
+        #popup {
+            width: 100px;
+            height: 150px;
+            padding: 20px;
+            border: 2px solid black;
+            display: none;
+            position: absolute;
+            background: blue;
+
         }
     </style>
     <head>
         <meta charset="utf-8">
         <title>Page</title>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript">
+            function popup(slot) {
+                var x = event.clientX;
+                var y = event.clientY;
+                var layer = document.getElementById("popup");
+
+                layer.style.left = (x + 3) + "px";
+                layer.style.top = (y + 3) + "px";
+                layer.style.display = "block";
+
+                document.getElementById("content").innerHTML = slot;
+
+            }
+
+            function popup_close() {
+                var layer = document.getElementById("popup");
+                layer.style.display = "none";
+            }
+
+            $.fn.eqAnyOf = function(arrayOfIndexes) {
+                return this.filter(function(i) {
+                    return $.inArray(i, arrayOfIndexes) > -1;
+                });
+            };
+     
+            $(document).ready(function() {
+                var popup = function(e) {
+                    var x = e.clientX + 3;
+                    var y = e.clientY + 3;
+                    $("#popup").css("left", x + "px");
+                    $("#popup").css("top", y + "px");
+                    $("#popup").css("display", "block");
+                    $("#content").text(e.target.id);
+                    console.log(e.target.id);
+
+                
+                }
+
+                var popup_close = function(e) {
+                    $("#popup").css("display", "none");
+                }
+
+                $(".slot").on("mousemove", popup);
+                $(".slot").on("mouseout", popup_close);
+                
+                $(".slot").click(function (e) {
+                    $(".slot").off("mousemove");
+                    $(".slot").off("mouseout");
+                });
+
+                $("#btn").click(function (e) {
+                    console.log("@@Close@@");
+                    $(".slot").on("mousemove", popup);
+                    $(".slot").on("mouseout", popup_close);
+                });
+
+            });
+
+
+
+        </script>
     </head>
     <body>
-        <div class="slots"> <!-- 전체 틀 -->
+        <!-- 전체 틀 -->
+        <div class="slots">
             <div class="line" id="first_line"> <!-- 첫째 줄 --> 
-                <div class="slot" id="ring_1"></div>
-                <div class="slot" id="blank"></div>
+                <div class="slot" id="ring_1">반지 1</div>
+                <div class="slot_blank"></div>
                 <div class="slot" id="cap"></div>
-                <div class="slot" id="blank"></div>
+                <div class="slot_blank"></div>
                 <div class="slot" id="emblem"></div>
             </div>
-            <div class="line" id="first_line"> <!-- 둘째 줄 --> 
+            <div class="line" id="second_line"> <!-- 둘째 줄 --> 
                 <div class="slot" id="ring_2"></div>
                 <div class="slot" id="pendant_1"></div>
                 <div class="slot" id="fore_head"></div>
-                <div class="slot" id="blank"></div>
+                <div class="slot_blank"></div>
                 <div class="slot" id="badge"></div>
             </div>
-            <div class="line" id="first_line"> <!-- 셋째 줄 --> 
+            <div class="line" id="third_line"> <!-- 셋째 줄 --> 
                 <div class="slot" id="ring_3"></div>
                 <div class="slot" id="pendant_2"></div>
                 <div class="slot" id="eye_acc"></div>
                 <div class="slot" id="ear_acc"></div>
                 <div class="slot" id="medal"></div>
             </div>
-            <div class="line" id="first_line"> <!-- 넷째 줄 --> 
+            <div class="line" id="fourth_line"> <!-- 넷째 줄 --> 
                 <div class="slot" id="ring_4"></div>
                 <div class="slot" id="weapon"></div>
                 <div class="slot" id="top"></div>
                 <div class="slot" id="shoulder"></div>
                 <div class="slot" id="sub_weapon"></div>
             </div>
-            <div class="line" id="first_line"> <!-- 다섯째 줄 --> 
+            <div class="line" id="fifth_line"> <!-- 다섯째 줄 --> 
                 <div class="slot" id="pocket"></div>
                 <div class="slot" id="belt"></div>
                 <div class="slot" id="bottom"></div>
                 <div class="slot" id="gloves"></div>
                 <div class="slot" id="cape"></div>
             </div>
-            <div class="line" id="first_line"> <!-- 여섯째 줄 --> 
-                <div class="slot" id="blank""></div>
-                <div class="slot" id="blank"></div>
+            <div class="line" id="sixth_line"> <!-- 여섯째 줄 --> 
+                <div class="slot_blank"></div>
+                <div class="slot_blank"></div>
                 <div class="slot" id="shoes"></div>
                 <div class="slot" id="android"></div>
                 <div class="slot" id="heart"></div>
             </div>
+        </div>
+
+        <!-- 팝업 -->
+        <div id="popup">
+            <p id="content">내용</p>
+            <button type="button" id="btn" onclick="popup_close();">닫기</button>
         </div>
     </body>
 </html>
