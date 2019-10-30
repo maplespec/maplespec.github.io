@@ -1,0 +1,269 @@
+/* 전체 틀*/        
+#equip_bg {
+    background-image: url('../image/equip_win/bg.png');
+    background-repeat: no-repeat;
+    width: 232px;
+    height: 330px;
+    position: absolute;
+    z-index: -2;
+}
+
+#equip_tab {
+    margin-top: 21px;
+    margin-left: 7px;
+}
+
+#tab_1 {
+    background-image: url('../image/equip_win/tab_1.png');
+    background-repeat: no-repeat;
+    width: 42px;
+    height: 22px;
+    float: left;
+    position: relative;
+    margin-left: 2px;
+    z-index: -1;
+    top: 0;
+}
+
+#tab_2 {
+    background-image: url('../image/equip_win/tab_2.png');
+    background-repeat: no-repeat;
+    width: 42px;
+    height: 22px;
+    margin-top: 2px;
+    float: left;
+    position: relative;
+    z-index: -1;
+}
+
+#tab_3 {
+    background-image: url('../image/equip_win/tab_3.png');
+    background-repeat: no-repeat;
+    width: 42px;
+    height: 22px;
+    margin-top: 2px;
+    float: left;
+    position: relative;
+    z-index: -1;
+}
+
+#tab_4 {
+    background-image: url('../image/equip_win/tab_4.png');
+    background-repeat: no-repeat;
+    width: 42px;
+    height: 22px;
+    margin-top: 2px;
+    float: left;
+    position: relative;
+    z-index: -1;
+}
+
+#tabbar {
+    background-image: url('../image/equip_win/tabbar.png');
+    background-repeat: no-repeat;
+    width: 218px;
+    height: 4px;
+    margin-top: -4px;
+    float: left;
+    position: relative;
+    z-index: 1;
+}
+
+#equip_bg2 {
+    background-image: url('../image/equip_win/bg2.png');
+    background-repeat: no-repeat;
+    width: 214px;
+    height: 256px;
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 14px;
+    bottom: 0;
+    z-index: 2;
+}
+
+#equip_slots {
+    background-image: url('../image/equip_win/bg_char.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 214px;
+    height: 256px;
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 14px;
+    bottom: 0;
+    z-index: 3;
+}
+
+/* 아이템 슬롯 */
+#first_line,
+#second_line,
+#third_line,
+#fourth_line,
+#fifth_line,
+#sixth_line {
+    display: inline-block;
+    margin-left: 5px;
+    margin-top: -2px;
+}
+
+#first_line {
+    margin-top: 6px;
+}
+
+.equip_slot {
+    border: none;
+    width: 40px;
+    height: 39px;
+    float: left;
+    margin-left: 1px;
+}
+
+.equip_slot_blank {
+    border: none;
+    width: 40px;
+    height: 39px;
+    float: left;
+    margin-left: 1px;
+}
+
+#ring_1, #ring_2, #ring_3, #ring_4 {
+    background-image: url('../image/equip_win/ring.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left: 0px;
+}
+
+#poket {
+    background-image: url('../image/equip_win/poket.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left: 0px;
+}
+
+#blank_4 {
+    margin-left: 0px;
+}
+
+#pendant_1 {
+    background-image: url('../image/equip_win/pendant_1.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#pendant_2 {
+    background-image: url('../image/equip_win/pendant_2.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#weapon {
+    background-image: url('../image/equip_win/weapon.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#belt {
+    background-image: url('../image/equip_win/belt.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#cap {
+    background-image: url('../image/equip_win/cap.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#fore_head {
+    background-image: url('../image/equip_win/fore_head.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#eye_acc {
+    background-image: url('../image/equip_win/eye_acc.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#clothes {
+    background-image: url('../image/equip_win/clothes.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#pants {
+    background-image: url('../image/equip_win/pants.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#shoes {
+    background-image: url('../image/equip_win/shoes.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#ear_acc {
+    background-image: url('../image/equip_win/ear_acc.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#shoulder {
+    background-image: url('../image/equip_win/shoulder.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#gloves {
+    background-image: url('../image/equip_win/gloves.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#android {
+    background-image: url('../image/equip_win/android.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#emblem {
+    background-image: url('../image/equip_win/emblem.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#badge {
+    background-image: url('../image/equip_win/badge.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#medal {
+    background-image: url('../image/equip_win/medal.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#sub_weapon {
+    background-image: url('../image/equip_win/sub_weapon.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#cape {
+    background-image: url('../image/equip_win/cape.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#heart {
+    background-image: url('../image/equip_win/heart.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
