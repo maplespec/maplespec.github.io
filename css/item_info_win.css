@@ -1,0 +1,112 @@
+#item_info_bg {
+    margin-left: 240px;
+}
+
+#item_info_bg_frame_cover {
+    position: absolute;
+    background-image: url('../image/item_info_win/frame_cover.png');
+    background-repeat: no-repeat;
+    width: 53px;
+    height: 43px;
+    margin-top: 2px;
+    margin-left: 2px;
+}
+
+#item_info_bg_top {
+    background-image: url('../image/item_info_win/top.png');
+    background-repeat: no-repeat;
+    width: 261px;
+    height: 13px;
+}
+
+#item_info_bg_middle_1 {
+    background-image: url('../image/item_info_win/line.png');
+    width: 261px;
+}
+
+#item_info_bg_middle_2 {
+    background-image: url('../image/item_info_win/line.png');
+    width: 261px;
+    overflow: auto;
+}
+
+#item_info_bg_bottom {
+    background-image: url('../image/item_info_win/bottom.png');
+    background-repeat: no-repeat;
+    width: 261px;
+    height: 13px;
+}
+
+#item_info_stars_1 {
+    margin-left: 49px;
+    height: 10px;
+}
+
+#item_info_stars_2 {
+    margin-left: 77px;
+    padding-top: 8px;
+    height: 10px;
+}
+
+.star_blank {
+    background-image: url('../image/item_info_win/star_blank.png');
+    background-repeat: no-repeat;
+    width: 11px;
+    height: 10px;
+    margin-left: -1px;
+    float: left;
+}
+
+#star_0, #star_16 {
+    margin-left: 0px;
+}
+
+#star_6, #star_11, #star_21 {
+    margin-left: 5px;
+}
+
+#item_info_soul_name {
+    width: 261px;
+    font-size: 10.5pt;
+    font-weight: bold;
+    color: rgb(204, 255, 0);
+    margin-top: 8px;
+    text-align: center;
+    display: none;
+}
+
+#item_info_item_name {
+    width: 261px;
+    font-size: 10.5pt;
+    font-weight: bold;
+    color: rgb(255, 0, 102);
+    margin-top: 6px;
+    padding-bottom: 13px;
+    text-align: center;
+}
+
+.dot_line {
+    background-image: url('../image/item_info_win/dot_line.png');
+    background-repeat: no-repeat;
+    width: 261px;
+    height: 2px;
+}
+
+#item_info_item_icon {
+    background-image: url('../image/item_info_win/item_icon_bg.png');
+    background-repeat: no-repeat;
+    width: 82px;
+    height: 82px;
+    margin-top: 9px;
+    margin-left: 13px;
+}
+
+#item_info_item_icon_cover {
+    position: absolute;
+    background-image: url('../image/item_info_win/item_icon_cover.png');
+    background-repeat: no-repeat;
+    width: 74px;
+    height: 74px;
+    margin-left: 4px;
+    margin-top: 4px;
+}

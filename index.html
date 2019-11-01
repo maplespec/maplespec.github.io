@@ -12,11 +12,16 @@
             background: blue;
         }
 
+        * {
+            font-family: '돋움', Dotum;
+        }
+
     </style>    
     <head>
         <meta charset="utf-8">
         <title>Page</title>
-        <link href="css/equip_window.css" rel="stylesheet">
+        <link href="css/equip_win.css" rel="stylesheet">
+        <link href="css/item_info_win.css" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script type="text/javascript">
             $(document).ready(function() {
@@ -45,6 +50,11 @@
                     $(".equip_slot").on("mousemove", popup);
                     $(".equip_slot").on("mouseout", popup_close);
                 });
+
+                if ($("#item_info_soul_name").css("display") == "none") {
+                    $("#item_info_item_name").css("margin-top", "8px");
+                }
+                
             });
 
         </script>
@@ -59,44 +69,44 @@
                 <div id="tab_4"></div>
                 <div id="tabbar"></div>
             </div>
-            <div id="equip_bg2"></div>
+            <div id="equip_bg_2"></div>
             <div id="equip_slots">
-            <div class="equip_slots_line" id="first_line"> <!-- 첫째 줄 --> 
+            <div id="first_line"> <!-- 첫째 줄 --> 
                 <div class="equip_slot" id="ring_1"></div>
                 <div class="equip_slot_blank" id="blank_1"></div>
                 <div class="equip_slot" id="cap"></div>
                 <div class="equip_slot_blank" id="blank_2"></div>
                 <div class="equip_slot" id="emblem"></div>
             </div>
-            <div class="equip_slots_line" id="second_line"> <!-- 둘째 줄 --> 
+            <div id="second_line"> <!-- 둘째 줄 --> 
                 <div class="equip_slot" id="ring_2"></div>
                 <div class="equip_slot" id="pendant_1"></div>
                 <div class="equip_slot" id="fore_head"></div>
                 <div class="equip_slot_blank" id="blank_3"></div>
                 <div class="equip_slot" id="badge"></div>
             </div>
-            <div class="equip_slots_line" id="third_line"> <!-- 셋째 줄 --> 
+            <div id="third_line"> <!-- 셋째 줄 --> 
                 <div class="equip_slot" id="ring_3"></div>
                 <div class="equip_slot" id="pendant_2"></div>
                 <div class="equip_slot" id="eye_acc"></div>
                 <div class="equip_slot" id="ear_acc"></div>
                 <div class="equip_slot" id="medal"></div>
             </div>
-            <div class="equip_slots_line" id="fourth_line"> <!-- 넷째 줄 --> 
+            <div id="fourth_line"> <!-- 넷째 줄 --> 
                 <div class="equip_slot" id="ring_4"></div>
                 <div class="equip_slot" id="weapon"></div>
                 <div class="equip_slot" id="clothes"></div>
                 <div class="equip_slot" id="shoulder"></div>
                 <div class="equip_slot" id="sub_weapon"></div>
             </div>
-            <div class="equip_slots_line" id="fifth_line"> <!-- 다섯째 줄 --> 
+            <div id="fifth_line"> <!-- 다섯째 줄 --> 
                 <div class="equip_slot" id="poket"></div>
                 <div class="equip_slot" id="belt"></div>
                 <div class="equip_slot" id="pants"></div>
                 <div class="equip_slot" id="gloves"></div>
                 <div class="equip_slot" id="cape"></div>
             </div>
-            <div class="equip_slots_line" id="sixth_line"> <!-- 여섯째 줄 --> 
+            <div id="sixth_line"> <!-- 여섯째 줄 --> 
                 <div class="equip_slot_blank" id="blank_4"></div>
                 <div class="equip_slot_blank" id="blank_5"></div>
                 <div class="equip_slot" id="shoes"></div>
@@ -110,6 +120,65 @@
         <div id="popup">
             <p id="content">내용</p>
             <button type="button" id="btn">닫기</button>
+        </div>
+
+        <div id="item_info_bg">
+            <div id="item_info_bg_frame_cover"></div>
+            <div id="item_info_bg_top"></div>
+            <div id="item_info_bg_middle_1">
+                <div id="item_info_stars">
+                    <div id="item_info_stars_1">
+                        <div id="item_info_star_0_5">
+                            <div class="star_blank" id="star_0"></div>
+                            <div class="star_blank"></div>
+                            <div class="star_blank"></div>
+                            <div class="star_blank"></div>
+                            <div class="star_blank"></div>
+                        </div>
+                        <div id="item_info_star_6_10">
+                            <div class="star_blank" id="star_6"></div>
+                            <div class="star_blank"></div>
+                            <div class="star_blank"></div>
+                            <div class="star_blank"></div>
+                            <div class="star_blank"></div>
+                        </div>
+                        <div id="item_info_star_11_15">
+                            <div class="star_blank" id="star_11"></div>
+                            <div class="star_blank"></div>
+                            <div class="star_blank"></div>
+                            <div class="star_blank"></div>
+                            <div class="star_blank"></div>
+                        </div>
+                    </div>
+                    <div id="item_info_stars_2">
+                        <div id="item_info_star_16_20">
+                            <div class="star_blank" id="star_16"></div>
+                            <div class="star_blank"></div>
+                            <div class="star_blank"></div>
+                            <div class="star_blank"></div>
+                            <div class="star_blank"></div>
+                        </div>
+                        <div id="item_info_star_21_25">
+                            <div class="star_blank" id="star_21"></div>
+                            <div class="star_blank"></div>
+                            <div class="star_blank"></div>
+                            <div class="star_blank"></div>
+                            <div class="star_blank"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="item_info_soul_name">위대한 소울의</div>
+                <div id="item_info_item_name">아이템 이름</div>
+            </div>
+            <div class="dot_line"></div>
+            <div id="item_info_bg_middle_2">
+                <div id="item_info_item_icon">
+                    <div id="item_info_item_icon_cover"></div>
+                </div>
+
+            </div>
+
+            <div id="item_info_bg_bottom"></div>
         </div>
     </body>
 </html>
