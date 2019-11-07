@@ -1,0 +1,62 @@
+#arcane_bg {
+    margin-left: 232px;
+    position: absolute;
+    
+}
+
+#arcane_bg_top {
+    background-image: url('../image/arcane_win/top.png');
+    background-repeat: no-repeat;
+    width: 189px;
+    height: 135px;
+    overflow: hidden;
+}
+
+#arcane_bg_tooltip {
+    background-image: url('../image/arcane_win/tooltip.png');
+    background-repeat: no-repeat;
+    width: 176px;
+    height: 109px;
+    margin-left: 4px;
+    margin-top: 16px;
+}
+
+#arcane_bg_middle {
+    background-image: url('../image/arcane_win/middle.png');
+    width: 189px;
+    height: 175px;
+}
+
+.arcane_symbol {
+    background-image: url('../image/arcane_win/box.png');
+    background-repeat: no-repeat;
+    width: 48px;
+    height: 84px;
+    float: left;
+    margin-left: 3px;
+}
+
+#arcane_symbol_4 {
+    clear: both;
+}
+
+#arcane_symbol_1, #arcane_symbol_4 {
+    margin-left: 20px;
+}
+
+#arcane_symbol_1, #arcane_symbol_2, #arcane_symbol_3 {
+    margin-top: -1px;
+}
+
+#arcane_symbol_4, #arcane_symbol_5, #arcane_symbol_6 {
+    margin-top: 7px;
+}
+
+
+
+#arcane_bg_bottom {
+    background-image: url('../image/arcane_win/bottom.png');
+    background-repeat: no-repeat;
+    width: 189px;
+    height: 20px;
+}

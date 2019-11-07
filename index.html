@@ -21,6 +21,7 @@
         <meta charset="utf-8">
         <title>Page</title>
         <link href="css/equip_win.css" rel="stylesheet">
+        <link href="css/arcane_win.css" rel="stylesheet">
         <link href="css/item_info_win.css" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script type="text/javascript">
@@ -60,7 +61,7 @@
         </script>
     </head>
     <body>
-        <!-- 전체 틀 -->
+        <!-- 아이템 창 -->
         <div id="equip_bg">
             <div id="equip_tab">
                 <div id="tab_1"></div>
@@ -116,12 +117,42 @@
             </div>
         </div>
 
+        <div id="arcane_bg">
+            <div id="arcane_bg_top">
+                <div id="arcane_bg_tooltip"></div>
+            </div>
+            <div id="arcane_bg_middle">
+                <div class="arcane_symbol" id="arcane_symbol_1">
+                    <div class="symbol_img" id="symbol_img_1"></div>
+                    <div class="symbol_gauge"></div>
+                </div>
+                <div class="arcane_symbol" id="arcane_symbol_2">
+
+                </div>
+                <div class="arcane_symbol" id="arcane_symbol_3">
+
+                </div>
+                <div class="arcane_symbol" id="arcane_symbol_4">
+
+                </div>
+                <div class="arcane_symbol" id="arcane_symbol_5">
+
+                </div>
+                <div class="arcane_symbol" id="arcane_symbol_6">
+
+                </div>
+            </div>
+            <div id="arcane_bg_bottom"></div>
+        </div>
+
+
         <!-- 팝업 -->
         <div id="popup">
             <p id="content">내용</p>
             <button type="button" id="btn">닫기</button>
         </div>
 
+        <!-- 잠시 보류
         <div id="item_info_bg">
             <div id="item_info_bg_frame_cover"></div>
             <div id="item_info_bg_top"></div>
@@ -174,11 +205,71 @@
             <div id="item_info_bg_middle_2">
                 <div id="item_info_item_icon">
                     <div id="item_info_item_icon_cover"></div>
+                    <div id="item_info_item_icon_frame"></div>
                 </div>
+                <div id="item_info_damage_increase">
+                    <div id="item_info_damage_increase_txt">공격력 증가량</div>
+                    <div id="item_info_damage_increase_num"></div>
+                    <div id="item_info_item_req">
+                        <div id="item_info_req_lev"></div>
+                        <div id="item_info_req_0"></div>
+                        <div id="item_info_req_str"></div>
+                        <div class="item_info_req_0_1"></div>
+                        <div class="item_info_req_0_1"></div>
+                        <div class="item_info_req_0_1"></div>
+                        <div id="item_info_req_luk"></div>
+                        <div class="item_info_req_0_1"></div>
+                        <div class="item_info_req_0_1"></div>
+                        <div class="item_info_req_0_1"></div>
+                        <div id="item_info_req_dex"></div>
+                        <div class="item_info_req_0_2"></div>
+                        <div class="item_info_req_0_2"></div>
+                        <div class="item_info_req_0_2"></div>
+                        <div id="item_info_req_int"></div>
+                        <div class="item_info_req_0_2"></div>
+                        <div class="item_info_req_0_2"></div>
+                        <div class="item_info_req_0_2"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="item_info_bg_middle_3">
+                <div id="item_info_job_bg">
+                    <div id="item_info_job_beginner"></div>
+                    <div id="item_info_job_warrior"></div>
+                    <div id="item_info_job_magician"></div>
+                    <div id="item_info_job_bowman"></div>
+                    <div id="item_info_job_thief"></div>
+                    <div id="item_info_job_pirate"></div>
+                </div>
+            </div>
+            <div class="dot_line"></div>
+            <div id="item_info_bg_middle_4">
+                <div id="equip_type">장비분류 : </div>
+                <div id="equip_str">STR : +</div>
+                <div id="equip_str_value">103</div>
+                <div id="equip_dex">DEX : +</div>
+                <div id="equip_dex_value">103</div>
+                <div id="equip_int">INT : +</div>
+                <div id="equip_int_value">103</div>
+                <div id="equip_luk">LUK : +</div>
+                <div id="equip_luk_value">103</div>
+                <div id="equip_attack_power">공격력 : +</div>
+                <div id="equip_attack_power_value">79</div>
+                <div id="equip_magic_attack">마력 : +</div>
+                <div id="equip_magic_attack_value">79</div>
+            </div>
+            <div class="dot_line"></div>
+            <div id="item_info_bg_middle_5">
+                <div id="item_info_potential_img"></div>
+                <div id="item_info_potential_txt">잠재옵션</div>
+            </div>
+            <div class="dot_line"></div>
+            <div id="item_info_bg_middle_6">
+
+
 
             </div>
-
             <div id="item_info_bg_bottom"></div>
-        </div>
+        </div> -->
     </body>
 </html>

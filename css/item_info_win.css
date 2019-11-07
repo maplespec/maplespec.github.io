@@ -19,12 +19,7 @@
     height: 13px;
 }
 
-#item_info_bg_middle_1 {
-    background-image: url('../image/item_info_win/line.png');
-    width: 261px;
-}
-
-#item_info_bg_middle_2 {
+#item_info_bg_middle_1, #item_info_bg_middle_2, #item_info_bg_middle_3, #item_info_bg_middle_4, #item_info_bg_middle_5, #item_info_bg_middle_6 {
     background-image: url('../image/item_info_win/line.png');
     width: 261px;
     overflow: auto;
@@ -97,8 +92,9 @@
     background-repeat: no-repeat;
     width: 82px;
     height: 82px;
-    margin-top: 9px;
-    margin-left: 13px;
+    margin-top: 8px;
+    margin-left: 12px;
+    float: left;
 }
 
 #item_info_item_icon_cover {
@@ -110,3 +106,248 @@
     margin-left: 4px;
     margin-top: 4px;
 }
+
+#item_info_item_icon_frame {
+    position: absolute;
+    background-image: url('../image/item_info_win/rare_frame.png');
+    background-repeat: no-repeat;
+    width: 90px;
+    height: 80px;
+    margin-left: 1px;
+    margin-top: 1px;
+}
+
+#item_info_damage_increase {
+    float: right;
+    margin-top: 6px;
+    margin-right: 13px;
+}
+
+#item_info_damage_increase_txt {
+    font-size: 8.6pt;
+    float: right;
+    margin-right: -1px;
+    color: rgb(153, 153, 153);
+}
+
+#item_info_damage_increase_num {
+    background-image: url('../image/item_info_win/0.png');
+    background-repeat: no-repeat;
+    width: 19px;
+    height: 26px;
+    clear: both;
+    float: right;
+    margin-top: 5px;
+    margin-right: 1px;
+}
+
+#item_info_item_req {
+    clear: both;
+    float: right;
+    margin-top: 6px;
+}
+
+#item_info_req_lev {
+    background-image: url('../image/item_info_win/req_lev.png');
+    background-repeat: no-repeat;
+    width: 49px;
+    height: 6px;
+}
+
+#item_info_req_lev {
+    background-image: url('../image/item_info_win/req_lev.png');
+    background-repeat: no-repeat;
+    width: 49px;
+    height: 6px;
+    float: left;
+}
+
+#item_info_req_0 {
+    background-image: url('../image/item_info_win/req_0.png');
+    background-repeat: no-repeat;
+    width: 5px;
+    height: 5px;
+    margin-left: 17px;
+    float: left;
+}
+
+.item_info_req_0_1, .item_info_req_0_2 {
+    background-image: url('../image/item_info_win/req_0.png');
+    background-repeat: no-repeat;
+    width: 5px;
+    height: 5px;
+    margin-left: 1px;
+    float: left;
+}
+
+.item_info_req_0_1 {
+    margin-top: 9px;
+}
+
+.item_info_req_0_2 {
+    margin-top: 3px;
+}
+
+#item_info_req_str {
+    background-image: url('../image/item_info_win/req_str.png');
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 6px;
+    padding-right: 3px;
+    margin-top: 9px;
+    clear: both;
+    float: left;
+}
+
+#item_info_req_luk {
+    background-image: url('../image/item_info_win/req_luk.png');
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 6px;
+    padding-right: 3px;
+    margin-left: 9px;
+    margin-top: 9px;
+    float: left;
+}
+
+#item_info_req_dex {
+    background-image: url('../image/item_info_win/req_dex.png');
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 6px;
+    padding-right: 3px;
+    margin-top: 3px;
+    clear: both;
+    float: left;
+}
+
+#item_info_req_int {
+    background-image: url('../image/item_info_win/req_int.png');
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 6px;
+    padding-right: 3px;
+    margin-left: 9px;
+    margin-top: 3px;
+    float: left;
+}
+
+#item_info_job_bg {
+    background-image: url('../image/item_info_win/job_bg.png');
+    background-repeat: no-repeat;
+    width: 237px;
+    height: 24px;
+    margin-left: 12px;
+    margin-top: 4px;
+    padding-bottom: 9px;
+}
+
+#item_info_job_beginner {
+    background-image: url('../image/item_info_win/beginner.png');
+    background-repeat: no-repeat;
+    width: 31px;
+    height: 10px;
+    margin-top: 7px;
+    margin-left: 15px;
+    float: left;
+}
+
+#item_info_job_warrior {
+    background-image: url('../image/item_info_win/warrior.png');
+    background-repeat: no-repeat;
+    width: 19px;
+    height: 10px;
+    margin-top: 7px;
+    margin-left: 14px;
+    float: left;
+}
+
+#item_info_job_magician {
+    background-image: url('../image/item_info_win/magician.png');
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 10px;
+    margin-top: 7px;
+    margin-left: 14px;
+    float: left;
+}
+
+#item_info_job_bowman {
+    background-image: url('../image/item_info_win/bowman.png');
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 10px;
+    margin-top: 7px;
+    margin-left: 14px;
+    float: left;
+}
+
+#item_info_job_thief {
+    background-image: url('../image/item_info_win/thief.png');
+    background-repeat: no-repeat;
+    width: 19px;
+    height: 10px;
+    margin-top: 7px;
+    margin-left: 14px;
+    float: left;
+}
+
+#item_info_job_pirate {
+    background-image: url('../image/item_info_win/pirate.png');
+    background-repeat: no-repeat;
+    width: 18px;
+    height: 10px;
+    margin-top: 7px;
+    margin-left: 14px;
+    float: left;
+}
+
+#item_info_bg_middle_4 div {
+    font-size: 8.6pt;
+    float: left;
+}
+
+#equip_type {
+    color: rgb(255, 255, 255);
+    margin-left: 14px;
+    margin-top: 4px;
+}
+
+#equip_str, #equip_dex, #equip_int, #equip_luk, #equip_attack_power, #equip_magic_attack {
+    color: rgb(102, 255, 255);
+    margin-left: 14px;
+    margin-top: 1px;
+    clear: both;
+}
+
+#equip_str_value, #equip_dex_value, #equip_int_value, #equip_luk_value, #equip_attack_power_value, #equip_magic_attack_value {
+    color: rgb(102, 255, 255);
+    margin-left: 0px;
+    margin-top: 1px;
+}
+
+#equip_magic_attack_value {
+    padding-bottom: 11px;
+}
+
+#item_info_bg_middle_5 div {
+    font-size: 8.6pt;
+}
+
+#item_info_potential_img {
+    background-image: url('../image/item_info_win/rare.png');
+    background-repeat: no-repeat;
+    width: 13px;
+    height: 13px;
+    margin-top: 4px;
+    margin-left: 9px;
+    float: left;
+}
+
+#item_info_potential_txt {
+    color: rgb(102, 255, 255);
+    margin-top: 4px;
+    margin-left: 5px;
+    float: left;
+}
+
