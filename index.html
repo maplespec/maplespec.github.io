@@ -38,12 +38,12 @@
                 });
 
                 $(document).mousedown(function() {
-                    $(".item_img, .symbol_edit_btn, .btn").css("animation", "none");
+                    $(".item_img, .symbol_edit_btn, .item_info_btn").css("animation", "none");
                     $('html').css("cursor", "url('image/cursor/click.png'), auto");
                 });
 
                 $(document).mouseup(function() {
-                    $(".item_img, .symbol_edit_btn, .btn").css("animation", "mouseover 0.75s infinite");
+                    $(".item_img, .symbol_edit_btn, .item_info_btn").css("animation", "mouseover 0.75s infinite");
                     $('html').css("cursor", "url('image/cursor/default.png'), auto");
                 });
 
@@ -72,18 +72,18 @@
                 /*--------------------------------------*/
 
                 var popup = function(e) {
-                    var x = e.clientX + 3;
-                    var y = e.clientY + 3;
-                    $("#popup").css("left", x + "px");
-                    $("#popup").css("top", y + "px");
-                    $("#popup").css("display", "block");
-                    $("#content").text(e.target.id);
+                    var x = e.clientX + 5;
+                    var y = e.clientY + 5;
+                    $("#item_info_bg").css("left", x + "px");
+                    $("#item_info_bg").css("top", y + "px");
+                    $("#item_info_bg").css("display", "block");
+                    $("#item_info_item_name").text(e.target.id);
                     var image = "image/equip_win/item_img/" + e.target.id + ".png";
                     $("#content_img").attr("src", image);
                 }
 
                 var popup_close = function() {
-                    $("#popup").css("display", "none");
+                    $("#item_info_bg").css("display", "none");
                 }
 
                 $(".item_img").on("mousemove", popup);
@@ -92,7 +92,7 @@
                     $(".item_img").off("mousemove");
                     $(".item_img").off("mouseout");
                 });
-                $(".btn").click(function() {
+                $(".item_info_btn").click(function() {
                     popup_close();
                     $(".item_img").on("mousemove", popup);
                     $(".item_img").on("mouseout", popup_close);
@@ -291,6 +291,10 @@
         </div>
         
         <div id="item_info_bg">
+            <div id="close_edit_btn">
+                <div class="item_info_btn" id="item_info_close_btn">닫기</div>
+                <div class="item_info_btn" id="item_info_edit_btn">수정</div>
+            </div>
             <div id="item_info_bg_frame_cover"></div>
             <div id="item_info_bg_top"></div>
             <div id="item_info_bg_middle_1">
@@ -381,19 +385,13 @@
             </div>
             <div class="dot_line"></div>
             <div id="item_info_bg_middle_4">
-                <div id="equip_type">장비분류 : </div>
-                <div id="equip_str">STR : +</div>
-                <div id="equip_str_value">103</div>
-                <div id="equip_dex">DEX : +</div>
-                <div id="equip_dex_value">103</div>
-                <div id="equip_int">INT : +</div>
-                <div id="equip_int_value">103</div>
-                <div id="equip_luk">LUK : +</div>
-                <div id="equip_luk_value">103</div>
-                <div id="equip_attack_power">공격력 : +</div>
-                <div id="equip_attack_power_value">79</div>
-                <div id="equip_magic_attack">마력 : +</div>
-                <div id="equip_magic_attack_value">79</div>
+                <div id="equip_type">장비분류 : <font id="equip_type_txt">스태프</font></div>
+                <div id="equip_str"><font class="equip_num">STR : <font class="equip_total" id="equip_str_total">+100</font></font><font id="equip_str_detail"> (<font id="equip_str_basic">30</font> <font class="equip_add" id="equip_str_add">+10</font> <font class="equip_work" id="equip_str_work">+60</font></font>)</div>
+                <div id="equip_dex"><font class="equip_num">DEX : <font class="equip_total" id="equip_dex_total">+100</font></font><font id="equip_dex_detail"> (<font id="equip_dex_basic">30</font> <font class="equip_add" id="equip_dex_add">+10</font> <font class="equip_work" id="equip_dex_work">+60</font></font>)</div>
+                <div id="equip_str"><font class="equip_num">INT : <font class="equip_total" id="equip_int_total">+100</font></font><font id="equip_int_detail"> (<font id="equip_int_basic">30</font> <font class="equip_add" id="equip_int_add">+10</font> <font class="equip_work" id="equip_int_work">+60</font></font>)</div>
+                <div id="equip_str"><font class="equip_num">LUK : <font class="equip_total" id="equip_luk_total">+100</font></font><font id="equip_luk_detail"> (<font id="equip_luk_basic">30</font> <font class="equip_add" id="equip_luk_add">+10</font> <font class="equip_work" id="equip_luk_work">+60</font></font>)</div>
+                <div id="equip_ap"><font class="equip_num">공격력 : <font class="equip_total" id="equip_ap_total">+50</font></font><font id="equip_ap_detail"> (<font id="equip_ap_basic">30</font> <font class="equip_add" id="equip_ap_add">+5</font> <font class="equip_work" id="equip_ap_work">+15</font></font>)</div>
+                <div id="equip_ma"><font class="equip_num">미력 : <font class="equip_total" id="equip_ma_total">+50</font></font><font id="equip_ma_detail"> (<font id="equip_ma_basic">30</font> <font class="equip_add" id="equip_ma_add">+5</font> <font class="equip_work" id="equip_ma_work">+15</font></font>)</div>
             </div>
             <div class="dot_line"></div>
             <div id="item_info_bg_middle_5">

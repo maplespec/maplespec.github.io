@@ -1,7 +1,21 @@
 #item_info_bg {
-    padding-top: 340px;
     position: absolute;
-    z-index: -3;
+    display: none;
+}
+
+#close_edit_btn {
+    width: 30px;
+    height: 50px;
+    background-color: white;
+    border: 1px solid red;
+    position: absolute;
+    right: 0px;
+}
+
+.item_info_btn {
+    font-size: 8.6pt;
+    margin-top: 5px;
+    border: 1px solid black;
 }
 
 #item_info_bg_frame_cover {
@@ -306,7 +320,6 @@
 
 #item_info_bg_middle_4 div {
     font-size: 8.6pt;
-    float: left;
 }
 
 #equip_type {
@@ -315,20 +328,25 @@
     margin-top: 4px;
 }
 
-#equip_str, #equip_dex, #equip_int, #equip_luk, #equip_attack_power, #equip_magic_attack {
-    color: rgb(102, 255, 255);
+#equip_str, #equip_dex, #equip_int, #equip_luk, #equip_ap, #equip_ma {
+    color: rgb(255, 255, 255);
     margin-left: 14px;
     margin-top: 1px;
-    clear: both;
 }
 
-#equip_str_value, #equip_dex_value, #equip_int_value, #equip_luk_value, #equip_attack_power_value, #equip_magic_attack_value {
+.equip_num {
+    color: rgb(102, 255, 255);s
+}
+
+.equip_add {
+    color: rgb(204, 255, 0);
+}
+
+.equip_work {
     color: rgb(102, 255, 255);
-    margin-left: 0px;
-    margin-top: 1px;
 }
 
-#equip_magic_attack_value {
+#equip_ma {
     padding-bottom: 11px;
 }
 
