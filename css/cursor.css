@@ -1,0 +1,22 @@
+html {
+    cursor: url('../image/cursor/default.png'), auto;
+}
+/* https://codepen.io/Jan-Timon/pen/amkLWL */
+
+.item_img, .symbol_edit_btn {
+    animation: mouseover 0.75s infinite;
+}
+
+@keyframes mouseover {
+    0% { 
+        cursor: url("../image/cursor/mouseover_1.png"), auto;
+    }
+    
+    50% { 
+        cursor: url("../image/cursor/mouseover_2.png"), auto;
+    }
+    
+    100% { 
+        cursor: url("../image/cursor/mouseover_1.png"), auto;
+    }
+}

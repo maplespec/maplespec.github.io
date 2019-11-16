@@ -14,19 +14,14 @@
 
         * {
             font-family: '돋움', Dotum;
-
         }
-
-        html {
-            cursor: url('image/cursor/default.png'), auto;
-        }
-            /* https://codepen.io/Jan-Timon/pen/amkLWL */
             /* image-rendering: pixeled */
 
     </style>    
     <head>
         <meta charset="utf-8">
         <title>Page</title>
+        <link href="css/cursor.css" rel="stylesheet">
         <link href="css/equip_win.css" rel="stylesheet">
         <link href="css/arcane_win.css" rel="stylesheet">
         <link href="css/item_info_win.css" rel="stylesheet">
@@ -77,20 +72,22 @@
                     $("#content_img").attr("src", image);
                 }
 
-                var popup_close = function(e) {
+                var popup_close = function() {
                     $("#popup").css("display", "none");
                 }
 
                 $(".item_img").on("mousemove", popup);
                 $(".item_img").on("mouseout", popup_close);
-                $(".item_img").click(function (e) {
+                $(".item_img").click(function() {
                     $(".item_img").off("mousemove");
                     $(".item_img").off("mouseout");
+                    $(".item_img, .symbol_edit_btn").css("animation", "none");
                 });
-                $("#btn").click(function (e) {
+                $("#btn").click(function() {
                     popup_close();
                     $(".item_img").on("mousemove", popup);
                     $(".item_img").on("mouseout", popup_close);
+                    $(".item_img, .symbol_edit_btn").css("animation", "mouseover 0.75s infinite");
                 });
                 
             });
