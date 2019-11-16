@@ -14,7 +14,14 @@
 
         * {
             font-family: '돋움', Dotum;
+
         }
+
+        html {
+            cursor: url('image/cursor/default.png'), auto;
+        }
+            /* https://codepen.io/Jan-Timon/pen/amkLWL */
+            /* image-rendering: pixeled */
 
     </style>    
     <head>
@@ -26,7 +33,39 @@
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script type="text/javascript">
             $(document).ready(function() {
-                console.log("Running");
+                $(document).contextmenu(function() {
+                    return false;
+                });
+
+                $(document).bind("selectstart dragstart", function(e) {
+                    e.preventDefault();
+                    return false;
+                });
+
+                /*--------------------------------------*/
+
+                var item_img_path = "url('image/equip_win/item_img/";
+                var equip_slot_path = "url('image/equip_win/";
+                var path_end = ".png')";
+                
+                for(var i = 0; i < 25; i++) {
+                    var equip_slot = $(".equip_slot").eq(i);
+                    equip_slot.css("background-image", equip_slot_path + equip_slot.attr("id").slice(0,-5) + path_end);
+                }
+
+                for(var i = 0; i < 25; i++) {
+                    var item_img = $(".item_img").eq(i);
+                    item_img.css("background-image", item_img_path + item_img.attr("id") + path_end);
+                }
+
+                /*--------------------------------------*/
+
+                if ($("#item_info_soul_name").css("display") == "none") {
+                    $("#item_info_item_name").css("margin-top", "8px");
+                }
+
+                /*--------------------------------------*/
+
                 var popup = function(e) {
                     var x = e.clientX + 3;
                     var y = e.clientY + 3;
@@ -34,27 +73,25 @@
                     $("#popup").css("top", y + "px");
                     $("#popup").css("display", "block");
                     $("#content").text(e.target.id);
+                    var image = "image/equip_win/item_img/" + e.target.id + ".png";
+                    $("#content_img").attr("src", image);
                 }
 
                 var popup_close = function(e) {
                     $("#popup").css("display", "none");
                 }
 
-                $(".equip_slot").on("mousemove", popup);
-                $(".equip_slot").on("mouseout", popup_close);
-                $(".equip_slot").click(function (e) {
-                    $(".equip_slot").off("mousemove");
-                    $(".equip_slot").off("mouseout");
+                $(".item_img").on("mousemove", popup);
+                $(".item_img").on("mouseout", popup_close);
+                $(".item_img").click(function (e) {
+                    $(".item_img").off("mousemove");
+                    $(".item_img").off("mouseout");
                 });
                 $("#btn").click(function (e) {
                     popup_close();
-                    $(".equip_slot").on("mousemove", popup);
-                    $(".equip_slot").on("mouseout", popup_close);
+                    $(".item_img").on("mousemove", popup);
+                    $(".item_img").on("mouseout", popup_close);
                 });
-
-                if ($("#item_info_soul_name").css("display") == "none") {
-                    $("#item_info_item_name").css("margin-top", "8px");
-                }
                 
             });
 
@@ -73,86 +110,181 @@
             <div id="equip_bg_2"></div>
             <div id="equip_slots">
             <div id="first_line"> <!-- 첫째 줄 --> 
-                <div class="equip_slot" id="ring_1"></div>
+                <div class="equip_slot" id="ring_1_slot">
+                    <div class="item_img" id="ring_1"></div>
+                </div>
                 <div class="equip_slot_blank" id="blank_1"></div>
-                <div class="equip_slot" id="cap"></div>
+                <div class="equip_slot" id="cap_slot">
+                    <div class="item_img" id="cap"></div>
+                </div>
                 <div class="equip_slot_blank" id="blank_2"></div>
-                <div class="equip_slot" id="emblem"></div>
+                <div class="equip_slot" id="emblem_slot">
+                    <div class="item_img" id="emblem"></div>
+                </div>
             </div>
             <div id="second_line"> <!-- 둘째 줄 --> 
-                <div class="equip_slot" id="ring_2"></div>
-                <div class="equip_slot" id="pendant_1"></div>
-                <div class="equip_slot" id="fore_head"></div>
+                <div class="equip_slot" id="ring_2_slot">
+                    <div class="item_img" id="ring_2"></div>
+                </div>
+                <div class="equip_slot" id="pendant_1_slot">
+                    <div class="item_img" id="pendant_1"></div>
+                </div>
+                <div class="equip_slot" id="fore_head_slot">
+                    <div class="item_img" id="fore_head"></div>
+                </div>
                 <div class="equip_slot_blank" id="blank_3"></div>
-                <div class="equip_slot" id="badge"></div>
+                <div class="equip_slot" id="badge_slot">
+                    <div class="item_img" id="badge"></div>
+                </div>
             </div>
             <div id="third_line"> <!-- 셋째 줄 --> 
-                <div class="equip_slot" id="ring_3"></div>
-                <div class="equip_slot" id="pendant_2"></div>
-                <div class="equip_slot" id="eye_acc"></div>
-                <div class="equip_slot" id="ear_acc"></div>
-                <div class="equip_slot" id="medal"></div>
+                <div class="equip_slot" id="ring_3_slot">
+                    <div class="item_img" id="ring_3"></div>
+                </div>
+                <div class="equip_slot" id="pendant_2_slot">
+                    <div class="item_img" id="pendant_2"></div>
+                </div>
+                <div class="equip_slot" id="eye_acc_slot">
+                    <div class="item_img" id="eye_acc"></div>
+                </div>
+                <div class="equip_slot" id="ear_acc_slot">
+                    <div class="item_img" id="ear_acc"></div>
+                </div>
+                <div class="equip_slot" id="medal_slot">
+                    <div class="item_img" id="medal"></div>
+                </div>
             </div>
             <div id="fourth_line"> <!-- 넷째 줄 --> 
-                <div class="equip_slot" id="ring_4"></div>
-                <div class="equip_slot" id="weapon"></div>
-                <div class="equip_slot" id="clothes"></div>
-                <div class="equip_slot" id="shoulder"></div>
-                <div class="equip_slot" id="sub_weapon"></div>
+                <div class="equip_slot" id="ring_4_slot">
+                    <div class="item_img" id="ring_4"></div>
+                </div>
+                <div class="equip_slot" id="weapon_slot">
+                    <div class="item_img" id="weapon"></div>
+                </div>
+                <div class="equip_slot" id="clothes_slot">
+                    <div class="item_img" id="clothes"></div>
+                </div>
+                <div class="equip_slot" id="shoulder_slot">
+                    <div class="item_img" id="shoulder"></div>
+                </div>
+                <div class="equip_slot" id="sub_weapon_slot">
+                    <div class="item_img" id="sub_weapon"></div>
+                </div>
             </div>
             <div id="fifth_line"> <!-- 다섯째 줄 --> 
-                <div class="equip_slot" id="poket"></div>
-                <div class="equip_slot" id="belt"></div>
-                <div class="equip_slot" id="pants"></div>
-                <div class="equip_slot" id="gloves"></div>
-                <div class="equip_slot" id="cape"></div>
+                <div class="equip_slot" id="poket_slot">
+                    <div class="item_img" id="poket"></div>
+                </div>
+                <div class="equip_slot" id="belt_slot">
+                    <div class="item_img" id="belt"></div>
+                </div>
+                <div class="equip_slot" id="pants_slot">
+                    <div class="item_img" id="pants"></div>
+                </div>
+                <div class="equip_slot" id="gloves_slot">
+                    <div class="item_img" id="gloves"></div>
+                </div>
+                <div class="equip_slot" id="cape_slot">
+                    <div class="item_img" id="cape"></div>
+                </div>
             </div>
             <div id="sixth_line"> <!-- 여섯째 줄 --> 
                 <div class="equip_slot_blank" id="blank_4"></div>
                 <div class="equip_slot_blank" id="blank_5"></div>
-                <div class="equip_slot" id="shoes"></div>
-                <div class="equip_slot" id="android"></div>
-                <div class="equip_slot" id="heart"></div>
+                <div class="equip_slot" id="shoes_slot">
+                    <div class="item_img" id="shoes"></div>
+                </div>
+                <div class="equip_slot" id="android_slot">
+                    <div class="item_img" id="android"></div>
+                </div>
+                <div class="equip_slot" id="heart_slot">
+                    <div class="item_img" id="heart"></div>
+                </div>
             </div>
             </div>
         </div>
 
         <div id="arcane_bg">
             <div id="arcane_bg_top">
-                <div id="arcane_bg_tooltip"></div>
+                <div id="arcane_bg_tooltip">
+                    <div id="arc_txt"></div>
+                    <div id="arc_num">
+                        <div class="plus"></div>
+                        <div id="arc_num_1"></div>
+                        <div id="arc_num_2"></div>
+                        <div id="arc_num_3"></div>
+                        <div id="arc_num_4"></div>
+                    </div>
+                    <div id="stat_txt"></div>
+                    <div id="stat_num">
+                        <div class="plus"></div>
+                        <div id="stat_num_1"></div>
+                        <div id="stat_num_2"></div>
+                        <div id="stat_num_3"></div>
+                        <div id="stat_num_4"></div>
+                        <div id="stat_num_5"></div>
+                    </div>
+                </div>
             </div>
             <div id="arcane_bg_middle">
                 <div class="arcane_symbol" id="arcane_symbol_1">
                     <div class="symbol_img" id="symbol_img_1"></div>
-                    <div class="symbol_gauge"></div>
+                    <div class="symbol_level">
+                        <div class="symbol_level_txt"></div>
+                        <div class="symbol_level_num_1" id="symbol_1_num_1"></div>
+                        <div class="symbol_level_num_2" id="symbol_1_num_2"></div>
+                    </div>
+                    <div class="symbol_edit_btn" id="symbol_edit_btn_1"></div>
                 </div>
                 <div class="arcane_symbol" id="arcane_symbol_2">
-
+                    <div class="symbol_img" id="symbol_img_2"></div>
+                    <div class="symbol_level">
+                        <div class="symbol_level_txt"></div>
+                        <div class="symbol_level_num_1" id="symbol_2_num_1"></div>
+                        <div class="symbol_level_num_2" id="symbol_2_num_2"></div>
+                    </div>
+                    <div class="symbol_edit_btn" id="symbol_edit_btn_2"></div>
                 </div>
                 <div class="arcane_symbol" id="arcane_symbol_3">
-
+                    <div class="symbol_img" id="symbol_img_3"></div>
+                    <div class="symbol_level">
+                        <div class="symbol_level_txt"></div>
+                        <div class="symbol_level_num_1" id="symbol_3_num_1"></div>
+                        <div class="symbol_level_num_2" id="symbol_3_num_2"></div>
+                    </div>
+                    <div class="symbol_edit_btn" id="symbol_edit_btn_3"></div>
                 </div>
                 <div class="arcane_symbol" id="arcane_symbol_4">
-
+                    <div class="symbol_img" id="symbol_img_4"></div>
+                    <div class="symbol_level">
+                        <div class="symbol_level_txt"></div>
+                        <div class="symbol_level_num_1" id="symbol_4_num_1"></div>
+                        <div class="symbol_level_num_2" id="symbol_4_num_2"></div>
+                    </div>
+                    <div class="symbol_edit_btn" id="symbol_edit_btn_4"></div>
                 </div>
                 <div class="arcane_symbol" id="arcane_symbol_5">
-
+                    <div class="symbol_img" id="symbol_img_5"></div>
+                    <div class="symbol_level">
+                        <div class="symbol_level_txt"></div>
+                        <div class="symbol_level_num_1" id="symbol_5_num_1"></div>
+                        <div class="symbol_level_num_2" id="symbol_5_num_2"></div>
+                    </div>
+                    <div class="symbol_edit_btn" id="symbol_edit_btn_5"></div>
                 </div>
                 <div class="arcane_symbol" id="arcane_symbol_6">
-
+                    <div class="symbol_img" id="symbol_img_6"></div>
+                    <div class="symbol_level">
+                        <div class="symbol_level_txt"></div>
+                        <div class="symbol_level_num_1" id="symbol_6_num_1"></div>
+                        <div class="symbol_level_num_2" id="symbol_6_num_2"></div>
+                    </div>
+                    <div class="symbol_edit_btn" id="symbol_edit_btn_6"></div>
                 </div>
             </div>
             <div id="arcane_bg_bottom"></div>
         </div>
-
-
-        <!-- 팝업 -->
-        <div id="popup">
-            <p id="content">내용</p>
-            <button type="button" id="btn">닫기</button>
-        </div>
-
-        <!-- 잠시 보류
+        
         <div id="item_info_bg">
             <div id="item_info_bg_frame_cover"></div>
             <div id="item_info_bg_top"></div>
@@ -270,6 +402,14 @@
 
             </div>
             <div id="item_info_bg_bottom"></div>
-        </div> -->
+        </div>
+
+        <!-- 팝업 -->
+        <div id="popup">
+            <p id="content">내용</p>
+            <img id="content_img"/>
+            <button type="button" id="btn">닫기</button>
+        </div>
+        
     </body>
 </html>

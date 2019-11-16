@@ -1,5 +1,7 @@
 #item_info_bg {
-    margin-left: 240px;
+    padding-top: 340px;
+    position: absolute;
+    z-index: -3;
 }
 
 #item_info_bg_frame_cover {

@@ -106,7 +106,7 @@
 #sixth_line {
     display: inline-block;
     margin-left: 5px;
-    margin-top: -2px;
+    margin-top: -1px;
 }
 
 #first_line {
@@ -119,6 +119,8 @@
     height: 39px;
     float: left;
     margin-left: 1px;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .equip_slot_blank {
@@ -129,140 +131,21 @@
     margin-left: 1px;
 }
 
-#ring_1, #ring_2, #ring_3, #ring_4 {
-    background-image: url('../image/equip_win/ring.png');
-    background-repeat: no-repeat;
-    background-position: center;
+#ring_1_slot, #ring_2_slot, #ring_3_slot, #ring_4_slot, #poket_slot, #blank_4 {
     margin-left: 0px;
 }
 
-#poket {
-    background-image: url('../image/equip_win/poket.png');
+.item_img {
     background-repeat: no-repeat;
     background-position: center;
-    margin-left: 0px;
+    width: 38px;
+    height: 38px;
+    margin: 0 auto;
+    /*filter: drop-shadow(0 0 0.1rem crimson);*/
 }
 
-#blank_4 {
-    margin-left: 0px;
-}
-
-#pendant_1 {
-    background-image: url('../image/equip_win/pendant_1.png');
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-#pendant_2 {
-    background-image: url('../image/equip_win/pendant_2.png');
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-#weapon {
-    background-image: url('../image/equip_win/weapon.png');
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-#belt {
-    background-image: url('../image/equip_win/belt.png');
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-#cap {
-    background-image: url('../image/equip_win/cap.png');
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-#fore_head {
-    background-image: url('../image/equip_win/fore_head.png');
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-#eye_acc {
-    background-image: url('../image/equip_win/eye_acc.png');
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-#clothes {
-    background-image: url('../image/equip_win/clothes.png');
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-#pants {
-    background-image: url('../image/equip_win/pants.png');
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-#shoes {
-    background-image: url('../image/equip_win/shoes.png');
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-#ear_acc {
-    background-image: url('../image/equip_win/ear_acc.png');
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-#shoulder {
-    background-image: url('../image/equip_win/shoulder.png');
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-#gloves {
-    background-image: url('../image/equip_win/gloves.png');
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-#android {
-    background-image: url('../image/equip_win/android.png');
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-#emblem {
-    background-image: url('../image/equip_win/emblem.png');
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-#badge {
-    background-image: url('../image/equip_win/badge.png');
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-#medal {
-    background-image: url('../image/equip_win/medal.png');
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-#sub_weapon {
-    background-image: url('../image/equip_win/sub_weapon.png');
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-#cape {
-    background-image: url('../image/equip_win/cape.png');
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-#heart {
-    background-image: url('../image/equip_win/heart.png');
-    background-repeat: no-repeat;
-    background-position: center;
-}
+/*
+#ring_2 {
+    background-image: url('../image/equip_win/item_img/ring_2.png');
+    box-shadow: inset 0 0 0 1px rgb(0,255,0);
+} */

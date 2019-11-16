@@ -19,6 +19,99 @@
     height: 109px;
     margin-left: 4px;
     margin-top: 16px;
+    overflow: hidden;
+}
+
+#arc_txt {
+    background-image: url('../image/arcane_win/arc.png');
+    background-repeat: no-repeat;
+    width: 35px;
+    height: 19px;
+    margin-left: 39px;
+    margin-top: 39px;
+    float: left;
+}
+
+#stat_txt {
+    background-image: url('../image/arcane_win/int.png');
+    background-repeat: no-repeat;
+    width: 33px;
+    height: 18px;
+    float: left;
+    clear: both;
+    margin-left: 39px;
+}
+
+#arc_num {
+    margin-top: 39px;
+    float: right;
+}
+
+#stat_num {
+    float: right;
+}
+
+.plus {
+    background-image: url('../image/arcane_win/plus.png');
+    background-repeat: no-repeat;
+    width: 14px;
+    height: 14px;
+    margin-right: 2px;
+    float: left;
+}
+
+#arc_num_1, #arc_num_2, #arc_num_3, #arc_num_4 {
+    background-repeat: no-repeat;
+    width: 17px;
+    height: 17px;
+    margin-left: -7px;
+    float: left;
+}
+
+#arc_num_1 {
+    background-image: url('../image/arcane_win/1.png');
+}
+
+#arc_num_2 {
+    background-image: url('../image/arcane_win/0.png');
+}
+
+#arc_num_3 {
+    background-image: url('../image/arcane_win/2.png');
+}
+
+#arc_num_4 {
+    background-image: url('../image/arcane_win/0.png');
+    margin-right: 15px;
+}
+
+#stat_num_1, #stat_num_2, #stat_num_3, #stat_num_4, #stat_num_5 {
+    background-repeat: no-repeat;
+    width: 17px;
+    height: 17px;
+    margin-left: -7px;
+    float: left;
+}
+
+#stat_num_1 {
+    background-image: url('../image/arcane_win/1.png');
+}
+
+#stat_num_2 {
+    background-image: url('../image/arcane_win/0.png');
+}
+
+#stat_num_3 {
+    background-image: url('../image/arcane_win/2.png');
+}
+
+#stat_num_4 {
+    background-image: url('../image/arcane_win/0.png');
+}
+
+#stat_num_5 {
+    background-image: url('../image/arcane_win/0.png');
+    margin-right: 15px;
 }
 
 #arcane_bg_middle {
@@ -52,7 +145,79 @@
     margin-top: 7px;
 }
 
+.symbol_img {
+    background-repeat: no-repeat;
+    width: 33px;
+    height: 33px;
+    margin-left: 7px;
+    margin-top: 5px;
+}
 
+#symbol_img_1 {
+    background-image: url('../image/arcane_win/symbol_1.png');
+}
+
+#symbol_img_2 {
+    background-image: url('../image/arcane_win/symbol_2.png');
+}
+
+#symbol_img_3 {
+    background-image: url('../image/arcane_win/symbol_3.png');
+}
+
+#symbol_img_4 {
+    background-image: url('../image/arcane_win/symbol_4.png');
+}
+
+#symbol_img_5 {
+    background-image: url('../image/arcane_win/symbol_5.png');
+}
+
+#symbol_img_6 {
+    background-image: url('../image/arcane_win/symbol_6.png');
+}
+
+.symbol_edit_btn {
+    background-image: url('../image/arcane_win/edit_btn.png');
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 16px;
+    margin-top: 27px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.symbol_level {
+    margin-left: 5px;
+    margin-top: 10px;
+}
+
+.symbol_level div {
+    float: left;
+}
+
+.symbol_level_txt {
+    background-image: url('../image/arcane_win/lv.png');
+    background-repeat: no-repeat;
+    width: 17px;
+    height: 10px;
+}
+
+.symbol_level_num_1 {
+    background-image: url('../image/arcane_win/lv_1.png');
+    background-repeat: no-repeat;
+    width: 5px;
+    height: 10px;
+    margin-left: 6px;
+}
+
+.symbol_level_num_2 {
+    background-image: url('../image/arcane_win/lv_5.png');
+    background-repeat: no-repeat;
+    width: 8px;
+    height: 10px;
+    margin-left: 2px;
+}
 
 #arcane_bg_bottom {
     background-image: url('../image/arcane_win/bottom.png');
