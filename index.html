@@ -37,6 +37,16 @@
                     return false;
                 });
 
+                $(document).mousedown(function() {
+                    $(".item_img, .symbol_edit_btn, #btn").css("animation", "none");
+                    $('html').css("cursor", "url('image/cursor/click.png'), auto");
+                });
+
+                $(document).mouseup(function() {
+                    $(".item_img, .symbol_edit_btn, #btn").css("animation", "mouseover 0.75s infinite");
+                    $('html').css("cursor", "url('image/cursor/default.png'), auto");
+                });
+
                 /*--------------------------------------*/
 
                 var item_img_path = "url('image/equip_win/item_img/";
@@ -81,13 +91,11 @@
                 $(".item_img").click(function() {
                     $(".item_img").off("mousemove");
                     $(".item_img").off("mouseout");
-                    $(".item_img, .symbol_edit_btn").css("animation", "none");
                 });
                 $("#btn").click(function() {
                     popup_close();
                     $(".item_img").on("mousemove", popup);
                     $(".item_img").on("mouseout", popup_close);
-                    $(".item_img, .symbol_edit_btn").css("animation", "mouseover 0.75s infinite");
                 });
                 
             });
@@ -405,7 +413,7 @@
         <div id="popup">
             <p id="content">내용</p>
             <img id="content_img"/>
-            <button type="button" id="btn">닫기</button>
+            <div id="btn" style="color: white">닫기</div>
         </div>
         
     </body>
