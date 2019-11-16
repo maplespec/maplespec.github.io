@@ -2,20 +2,9 @@
 <html>
     <style type="text/css">
         /* 팝업 */
-        #popup {
-            width: 100px;
-            height: 150px;
-            padding: 20px;
-            border: 2px solid black;
-            display: none;
-            position: absolute;
-            background: blue;
-        }
-
         * {
             font-family: '돋움', Dotum;
         }
-            /* image-rendering: pixeled */
 
     </style>    
     <head>
@@ -74,12 +63,20 @@
                 var popup = function(e) {
                     var x = e.clientX + 5;
                     var y = e.clientY + 5;
+                    var item_name = ["반지", "모자", "엠블렘",                      // 모자 1, 엠블렘 2
+                                     "반지", "펜던트", "얼굴장식", "뱃지",           // 무기 13, 상의 14
+                                     "반지", "펜던트", "눈장식", "귀고리", "훈장",   // 보조 16, 포켓 17
+                                     "반지", "무기", "상의", "어깨장식", "보조무기", // 바지 19
+                                     "포켓 아이템", "벨트", "하의", "장갑", "망토",
+                                     "신발", "안드로이드", "하트"];
+                    var index = $(".item_img").index(this);
+                    var item_image = "image/equip_win/item_img/" + e.target.id + ".png";
                     $("#item_info_bg").css("left", x + "px");
                     $("#item_info_bg").css("top", y + "px");
                     $("#item_info_bg").css("display", "block");
-                    $("#item_info_item_name").text(e.target.id);
-                    var image = "image/equip_win/item_img/" + e.target.id + ".png";
-                    $("#content_img").attr("src", image);
+                    $("#item_info_item_name").text(item_name[index]);
+                    $("#equip_type_txt").text(item_name[index]);
+                    $("#item_info_item_img").css("background-image", "url('" + item_image + "')");
                 }
 
                 var popup_close = function() {
@@ -345,6 +342,7 @@
             <div class="dot_line"></div>
             <div id="item_info_bg_middle_2">
                 <div id="item_info_item_icon">
+                    <div id="item_info_item_img"></div>
                     <div id="item_info_item_icon_cover"></div>
                     <div id="item_info_item_icon_frame"></div>
                 </div>
@@ -385,7 +383,7 @@
             </div>
             <div class="dot_line"></div>
             <div id="item_info_bg_middle_4">
-                <div id="equip_type">장비분류 : <font id="equip_type_txt">스태프</font></div>
+                <div id="equip_type">장비분류 : <font id="equip_type_txt">Unknown</font></div>
                 <div id="equip_str"><font class="equip_num">STR : <font class="equip_total" id="equip_str_total">+100</font></font><font id="equip_str_detail"> (<font id="equip_str_basic">30</font> <font class="equip_add" id="equip_str_add">+10</font> <font class="equip_work" id="equip_str_work">+60</font></font>)</div>
                 <div id="equip_dex"><font class="equip_num">DEX : <font class="equip_total" id="equip_dex_total">+100</font></font><font id="equip_dex_detail"> (<font id="equip_dex_basic">30</font> <font class="equip_add" id="equip_dex_add">+10</font> <font class="equip_work" id="equip_dex_work">+60</font></font>)</div>
                 <div id="equip_str"><font class="equip_num">INT : <font class="equip_total" id="equip_int_total">+100</font></font><font id="equip_int_detail"> (<font id="equip_int_basic">30</font> <font class="equip_add" id="equip_int_add">+10</font> <font class="equip_work" id="equip_int_work">+60</font></font>)</div>
@@ -405,14 +403,6 @@
 
             </div>
             <div id="item_info_bg_bottom"></div>
-        </div>
-
-        <!-- 팝업 -->
-        <div id="popup">
-            <p id="content">내용</p>
-            <img id="content_img"/>
-            <div class="btn" style="color: white">닫기</div>
-            <div class="btn" style="color: white">수정</div>
         </div>
         
     </body>

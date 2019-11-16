@@ -1,7 +1,6 @@
 html {
     cursor: url('../image/cursor/default.png'), auto;
 }
-/* https://codepen.io/Jan-Timon/pen/amkLWL */
 
 .item_img, .symbol_edit_btn, .item_info_btn {
     animation: mouseover 0.75s infinite;

@@ -113,6 +113,16 @@
     float: left;
 }
 
+#item_info_item_img {
+    position: absolute;
+    width: 82px;
+    height: 82px;
+    image-rendering: pixelated;
+    transform: scale(2);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 #item_info_item_icon_cover {
     position: absolute;
     background-image: url('../image/item_info_win/item_icon_cover.png');
