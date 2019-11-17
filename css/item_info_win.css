@@ -1,5 +1,6 @@
 #item_info_bg {
     position: absolute;
+    pointer-events: none;
     display: none;
 }
 

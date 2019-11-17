@@ -2,20 +2,41 @@ html {
     cursor: url('../image/cursor/default.png'), auto;
 }
 
-.item_img, .symbol_edit_btn, .item_info_btn {
-    animation: mouseover 0.75s infinite;
+.item_img {
+    /*animation: item_over 0.5s infinite;*/
+    animation: button_over 1s infinite;
 }
 
-@keyframes mouseover {
+.symbol_edit_btn, .item_info_btn {
+    animation: button_over 1s infinite;
+}
+
+@keyframes item_over {
+    0% {
+        cursor: url("../image/cursor/item_over_1.png") , auto;
+    }
+    25% {
+        cursor: url("../image/cursor/item_over_2.png") , auto;
+    }
+    50% {
+        cursor: url("../image/cursor/item_over_3.png") , auto;
+    }
+    75% {
+        cursor: url("../image/cursor/item_over_2.png") , auto;
+    }
+    100% {
+        cursor: url("../image/cursor/item_over_1.png") , auto;
+    }
+}
+
+@keyframes button_over {
     0% { 
-        cursor: url("../image/cursor/mouseover_1.png"), auto;
+        cursor: url("../image/cursor/button_over_1.png"), auto;
     }
-    
     50% { 
-        cursor: url("../image/cursor/mouseover_2.png"), auto;
+        cursor: url("../image/cursor/button_over_2.png"), auto;
     }
-    
     100% { 
-        cursor: url("../image/cursor/mouseover_1.png"), auto;
+        cursor: url("../image/cursor/button_over_1.png"), auto;
     }
 }

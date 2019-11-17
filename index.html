@@ -15,88 +15,12 @@
         <link href="css/arcane_win.css" rel="stylesheet">
         <link href="css/item_info_win.css" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="js/item_tooltip.js"></script>
+        <script src="js/page_setting.js"></script>
         <script type="text/javascript">
-            $(document).ready(function() {
-                $(document).contextmenu(function() {
-                    return false;
-                });
-
-                $(document).bind("selectstart dragstart", function(e) {
-                    e.preventDefault();
-                    return false;
-                });
-
-                $(document).mousedown(function() {
-                    $(".item_img, .symbol_edit_btn, .item_info_btn").css("animation", "none");
-                    $('html').css("cursor", "url('image/cursor/click.png'), auto");
-                });
-
-                $(document).mouseup(function() {
-                    $(".item_img, .symbol_edit_btn, .item_info_btn").css("animation", "mouseover 0.75s infinite");
-                    $('html').css("cursor", "url('image/cursor/default.png'), auto");
-                });
-
-                /*--------------------------------------*/
-
-                var item_img_path = "url('image/equip_win/item_img/";
-                var equip_slot_path = "url('image/equip_win/";
-                var path_end = ".png')";
-                
-                for(var i = 0; i < 25; i++) {
-                    var equip_slot = $(".equip_slot").eq(i);
-                    equip_slot.css("background-image", equip_slot_path + equip_slot.attr("id").slice(0,-5) + path_end);
-                }
-
-                for(var i = 0; i < 25; i++) {
-                    var item_img = $(".item_img").eq(i);
-                    item_img.css("background-image", item_img_path + item_img.attr("id") + path_end);
-                }
-
-                /*--------------------------------------*/
-
-                if ($("#item_info_soul_name").css("display") == "none") {
-                    $("#item_info_item_name").css("margin-top", "8px");
-                }
-
-                /*--------------------------------------*/
-
-                var popup = function(e) {
-                    var x = e.clientX + 5;
-                    var y = e.clientY + 5;
-                    var item_name = ["반지", "모자", "엠블렘",                      // 모자 1, 엠블렘 2
-                                     "반지", "펜던트", "얼굴장식", "뱃지",           // 무기 13, 상의 14
-                                     "반지", "펜던트", "눈장식", "귀고리", "훈장",   // 보조 16, 포켓 17
-                                     "반지", "무기", "상의", "어깨장식", "보조무기", // 바지 19
-                                     "포켓 아이템", "벨트", "하의", "장갑", "망토",
-                                     "신발", "안드로이드", "하트"];
-                    var index = $(".item_img").index(this);
-                    var item_image = "image/equip_win/item_img/" + e.target.id + ".png";
-                    $("#item_info_bg").css("left", x + "px");
-                    $("#item_info_bg").css("top", y + "px");
-                    $("#item_info_bg").css("display", "block");
-                    $("#item_info_item_name").text(item_name[index]);
-                    $("#equip_type_txt").text(item_name[index]);
-                    $("#item_info_item_img").css("background-image", "url('" + item_image + "')");
-                }
-
-                var popup_close = function() {
-                    $("#item_info_bg").css("display", "none");
-                }
-
-                $(".item_img").on("mousemove", popup);
-                $(".item_img").on("mouseout", popup_close);
-                $(".item_img").click(function() {
-                    $(".item_img").off("mousemove");
-                    $(".item_img").off("mouseout");
-                });
-                $(".item_info_btn").click(function() {
-                    popup_close();
-                    $(".item_img").on("mousemove", popup);
-                    $(".item_img").on("mouseout", popup_close);
-                });
-                
-            });
-
+            if ($("#item_info_soul_name").css("display") == "none") {
+                $("#item_info_item_name").css("margin-top", "8px");
+            }
         </script>
     </head>
     <body>
@@ -111,7 +35,7 @@
             </div>
             <div id="equip_bg_2"></div>
             <div id="equip_slots">
-            <div id="first_line"> <!-- 첫째 줄 --> 
+            <div id="first_line"> 
                 <div class="equip_slot" id="ring_1_slot">
                     <div class="item_img" id="ring_1"></div>
                 </div>
@@ -124,7 +48,7 @@
                     <div class="item_img" id="emblem"></div>
                 </div>
             </div>
-            <div id="second_line"> <!-- 둘째 줄 --> 
+            <div id="second_line"> 
                 <div class="equip_slot" id="ring_2_slot">
                     <div class="item_img" id="ring_2"></div>
                 </div>
@@ -139,7 +63,7 @@
                     <div class="item_img" id="badge"></div>
                 </div>
             </div>
-            <div id="third_line"> <!-- 셋째 줄 --> 
+            <div id="third_line">
                 <div class="equip_slot" id="ring_3_slot">
                     <div class="item_img" id="ring_3"></div>
                 </div>
@@ -156,7 +80,7 @@
                     <div class="item_img" id="medal"></div>
                 </div>
             </div>
-            <div id="fourth_line"> <!-- 넷째 줄 --> 
+            <div id="fourth_line"> 
                 <div class="equip_slot" id="ring_4_slot">
                     <div class="item_img" id="ring_4"></div>
                 </div>
@@ -173,7 +97,7 @@
                     <div class="item_img" id="sub_weapon"></div>
                 </div>
             </div>
-            <div id="fifth_line"> <!-- 다섯째 줄 --> 
+            <div id="fifth_line"> 
                 <div class="equip_slot" id="poket_slot">
                     <div class="item_img" id="poket"></div>
                 </div>
@@ -190,7 +114,7 @@
                     <div class="item_img" id="cape"></div>
                 </div>
             </div>
-            <div id="sixth_line"> <!-- 여섯째 줄 --> 
+            <div id="sixth_line">
                 <div class="equip_slot_blank" id="blank_4"></div>
                 <div class="equip_slot_blank" id="blank_5"></div>
                 <div class="equip_slot" id="shoes_slot">
@@ -206,6 +130,7 @@
             </div>
         </div>
 
+        <!-- 심볼 창 -->
         <div id="arcane_bg">
             <div id="arcane_bg_top">
                 <div id="arcane_bg_tooltip">
@@ -287,6 +212,7 @@
             <div id="arcane_bg_bottom"></div>
         </div>
         
+        <!-- 아이템 툴팁 (팝업) -->
         <div id="item_info_bg">
             <div id="close_edit_btn">
                 <div class="item_info_btn" id="item_info_close_btn">닫기</div>
