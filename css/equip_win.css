@@ -4,7 +4,7 @@
     width: 232px;
     height: 330px;
     position: absolute;
-    z-index: -2;
+    z-index: 0;
 }
 
 #equip_tab {
