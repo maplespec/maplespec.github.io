@@ -1,30 +1,43 @@
 <!DOCTYPE html>
 <html>
-    <style type="text/css">
-        /* 팝업 */
-        * {
-            font-family: '돋움', Dotum;
-        }
+<style type="text/css">
+    * {
+        font-family: '돋움', Dotum;
+    }
 
-    </style>    
-    <head>
-        <meta charset="utf-8">
-        <title>Page</title>
-        <link href="css/cursor.css" rel="stylesheet">
-        <link href="css/equip_win.css" rel="stylesheet">
-        <link href="css/arcane_win.css" rel="stylesheet">
-        <link href="css/item_info_win.css" rel="stylesheet">
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="js/item_tooltip.js"></script>
-        <script src="js/page_setting.js"></script>
-        <script type="text/javascript">
-            if ($("#item_info_soul_name").css("display") == "none") {
-                $("#item_info_item_name").css("margin-top", "8px");
-            }
-        </script>
-    </head>
-    <body>
-        <!-- 아이템 창 -->
+    body {
+        width: 1366px;
+        height: 768px;
+        background-image: url('image/bg.png');
+        background-repeat: no-repeat;
+    }
+
+    #equip_arcane_win {
+        margin-left: 0px;
+    }
+</style>
+
+<head>
+    <meta charset="utf-8">
+    <title>Page</title>
+    <link href="css/cursor.css" rel="stylesheet">
+    <link href="css/equip_win.css" rel="stylesheet">
+    <link href="css/arcane_win.css" rel="stylesheet">
+    <link href="css/item_info_win.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="js/page_setting.js"></script>
+    <script src="js/equip_win.js"></script>
+    <script type="text/javascript">
+        if ($("#item_info_soul_name").css("display") == "none") {
+            $("#item_info_item_name").css("margin-top", "8px");
+        }
+    </script>
+</head>
+
+<body>
+    <!-- 장비 + 심볼 창 -->
+    <div id="equip_arcane_win">
+        <!-- 장비 창 -->
         <div id="equip_bg">
             <div id="equip_tab">
                 <div id="tab_1"></div>
@@ -35,98 +48,98 @@
             </div>
             <div id="equip_bg_2"></div>
             <div id="equip_slots">
-            <div id="first_line"> 
-                <div class="equip_slot" id="ring_1_slot">
-                    <div class="item_img" id="ring_1"></div>
+                <div id="first_line">
+                    <div class="equip_slot" id="ring_1_slot">
+                        <div class="item_img" id="ring_1"></div>
+                    </div>
+                    <div class="equip_slot_blank" id="blank_1"></div>
+                    <div class="equip_slot" id="cap_slot">
+                        <div class="item_img" id="cap"></div>
+                    </div>
+                    <div class="equip_slot_blank" id="blank_2"></div>
+                    <div class="equip_slot" id="emblem_slot">
+                        <div class="item_img" id="emblem"></div>
+                    </div>
                 </div>
-                <div class="equip_slot_blank" id="blank_1"></div>
-                <div class="equip_slot" id="cap_slot">
-                    <div class="item_img" id="cap"></div>
+                <div id="second_line">
+                    <div class="equip_slot" id="ring_2_slot">
+                        <div class="item_img" id="ring_2"></div>
+                    </div>
+                    <div class="equip_slot" id="pendant_1_slot">
+                        <div class="item_img" id="pendant_1"></div>
+                    </div>
+                    <div class="equip_slot" id="fore_head_slot">
+                        <div class="item_img" id="fore_head"></div>
+                    </div>
+                    <div class="equip_slot_blank" id="blank_3"></div>
+                    <div class="equip_slot" id="badge_slot">
+                        <div class="item_img" id="badge"></div>
+                    </div>
                 </div>
-                <div class="equip_slot_blank" id="blank_2"></div>
-                <div class="equip_slot" id="emblem_slot">
-                    <div class="item_img" id="emblem"></div>
+                <div id="third_line">
+                    <div class="equip_slot" id="ring_3_slot">
+                        <div class="item_img" id="ring_3"></div>
+                    </div>
+                    <div class="equip_slot" id="pendant_2_slot">
+                        <div class="item_img" id="pendant_2"></div>
+                    </div>
+                    <div class="equip_slot" id="eye_acc_slot">
+                        <div class="item_img" id="eye_acc"></div>
+                    </div>
+                    <div class="equip_slot" id="ear_acc_slot">
+                        <div class="item_img" id="ear_acc"></div>
+                    </div>
+                    <div class="equip_slot" id="medal_slot">
+                        <div class="item_img" id="medal"></div>
+                    </div>
                 </div>
-            </div>
-            <div id="second_line"> 
-                <div class="equip_slot" id="ring_2_slot">
-                    <div class="item_img" id="ring_2"></div>
+                <div id="fourth_line">
+                    <div class="equip_slot" id="ring_4_slot">
+                        <div class="item_img" id="ring_4"></div>
+                    </div>
+                    <div class="equip_slot" id="weapon_slot">
+                        <div class="item_img" id="weapon"></div>
+                    </div>
+                    <div class="equip_slot" id="clothes_slot">
+                        <div class="item_img" id="clothes"></div>
+                    </div>
+                    <div class="equip_slot" id="shoulder_slot">
+                        <div class="item_img" id="shoulder"></div>
+                    </div>
+                    <div class="equip_slot" id="sub_weapon_slot">
+                        <div class="item_img" id="sub_weapon"></div>
+                    </div>
                 </div>
-                <div class="equip_slot" id="pendant_1_slot">
-                    <div class="item_img" id="pendant_1"></div>
+                <div id="fifth_line">
+                    <div class="equip_slot" id="poket_slot">
+                        <div class="item_img" id="poket"></div>
+                    </div>
+                    <div class="equip_slot" id="belt_slot">
+                        <div class="item_img" id="belt"></div>
+                    </div>
+                    <div class="equip_slot" id="pants_slot">
+                        <div class="item_img" id="pants"></div>
+                    </div>
+                    <div class="equip_slot" id="gloves_slot">
+                        <div class="item_img" id="gloves"></div>
+                    </div>
+                    <div class="equip_slot" id="cape_slot">
+                        <div class="item_img" id="cape"></div>
+                    </div>
                 </div>
-                <div class="equip_slot" id="fore_head_slot">
-                    <div class="item_img" id="fore_head"></div>
+                <div id="sixth_line">
+                    <div class="equip_slot_blank" id="blank_4"></div>
+                    <div class="equip_slot_blank" id="blank_5"></div>
+                    <div class="equip_slot" id="shoes_slot">
+                        <div class="item_img" id="shoes"></div>
+                    </div>
+                    <div class="equip_slot" id="android_slot">
+                        <div class="item_img" id="android"></div>
+                    </div>
+                    <div class="equip_slot" id="heart_slot">
+                        <div class="item_img" id="heart"></div>
+                    </div>
                 </div>
-                <div class="equip_slot_blank" id="blank_3"></div>
-                <div class="equip_slot" id="badge_slot">
-                    <div class="item_img" id="badge"></div>
-                </div>
-            </div>
-            <div id="third_line">
-                <div class="equip_slot" id="ring_3_slot">
-                    <div class="item_img" id="ring_3"></div>
-                </div>
-                <div class="equip_slot" id="pendant_2_slot">
-                    <div class="item_img" id="pendant_2"></div>
-                </div>
-                <div class="equip_slot" id="eye_acc_slot">
-                    <div class="item_img" id="eye_acc"></div>
-                </div>
-                <div class="equip_slot" id="ear_acc_slot">
-                    <div class="item_img" id="ear_acc"></div>
-                </div>
-                <div class="equip_slot" id="medal_slot">
-                    <div class="item_img" id="medal"></div>
-                </div>
-            </div>
-            <div id="fourth_line"> 
-                <div class="equip_slot" id="ring_4_slot">
-                    <div class="item_img" id="ring_4"></div>
-                </div>
-                <div class="equip_slot" id="weapon_slot">
-                    <div class="item_img" id="weapon"></div>
-                </div>
-                <div class="equip_slot" id="clothes_slot">
-                    <div class="item_img" id="clothes"></div>
-                </div>
-                <div class="equip_slot" id="shoulder_slot">
-                    <div class="item_img" id="shoulder"></div>
-                </div>
-                <div class="equip_slot" id="sub_weapon_slot">
-                    <div class="item_img" id="sub_weapon"></div>
-                </div>
-            </div>
-            <div id="fifth_line"> 
-                <div class="equip_slot" id="poket_slot">
-                    <div class="item_img" id="poket"></div>
-                </div>
-                <div class="equip_slot" id="belt_slot">
-                    <div class="item_img" id="belt"></div>
-                </div>
-                <div class="equip_slot" id="pants_slot">
-                    <div class="item_img" id="pants"></div>
-                </div>
-                <div class="equip_slot" id="gloves_slot">
-                    <div class="item_img" id="gloves"></div>
-                </div>
-                <div class="equip_slot" id="cape_slot">
-                    <div class="item_img" id="cape"></div>
-                </div>
-            </div>
-            <div id="sixth_line">
-                <div class="equip_slot_blank" id="blank_4"></div>
-                <div class="equip_slot_blank" id="blank_5"></div>
-                <div class="equip_slot" id="shoes_slot">
-                    <div class="item_img" id="shoes"></div>
-                </div>
-                <div class="equip_slot" id="android_slot">
-                    <div class="item_img" id="android"></div>
-                </div>
-                <div class="equip_slot" id="heart_slot">
-                    <div class="item_img" id="heart"></div>
-                </div>
-            </div>
             </div>
         </div>
 
@@ -211,125 +224,170 @@
             </div>
             <div id="arcane_bg_bottom"></div>
         </div>
-        
-        <!-- 아이템 툴팁 (팝업) -->
-        <div id="item_info_bg">
-            <div id="close_edit_btn">
-                <div class="item_info_btn" id="item_info_close_btn">닫기</div>
-                <div class="item_info_btn" id="item_info_edit_btn">수정</div>
-            </div>
-            <div id="item_info_bg_frame_cover"></div>
-            <div id="item_info_bg_top"></div>
-            <div id="item_info_bg_middle_1">
-                <div id="item_info_stars">
-                    <div id="item_info_stars_1">
-                        <div id="item_info_star_0_5">
-                            <div class="star_blank" id="star_0"></div>
-                            <div class="star_blank"></div>
-                            <div class="star_blank"></div>
-                            <div class="star_blank"></div>
-                            <div class="star_blank"></div>
-                        </div>
-                        <div id="item_info_star_6_10">
-                            <div class="star_blank" id="star_6"></div>
-                            <div class="star_blank"></div>
-                            <div class="star_blank"></div>
-                            <div class="star_blank"></div>
-                            <div class="star_blank"></div>
-                        </div>
-                        <div id="item_info_star_11_15">
-                            <div class="star_blank" id="star_11"></div>
-                            <div class="star_blank"></div>
-                            <div class="star_blank"></div>
-                            <div class="star_blank"></div>
-                            <div class="star_blank"></div>
-                        </div>
-                    </div>
-                    <div id="item_info_stars_2">
-                        <div id="item_info_star_16_20">
-                            <div class="star_blank" id="star_16"></div>
-                            <div class="star_blank"></div>
-                            <div class="star_blank"></div>
-                            <div class="star_blank"></div>
-                            <div class="star_blank"></div>
-                        </div>
-                        <div id="item_info_star_21_25">
-                            <div class="star_blank" id="star_21"></div>
-                            <div class="star_blank"></div>
-                            <div class="star_blank"></div>
-                            <div class="star_blank"></div>
-                            <div class="star_blank"></div>
-                        </div>
-                    </div>
-                </div>
-                <div id="item_info_soul_name">위대한 소울의</div>
-                <div id="item_info_item_name">아이템 이름</div>
-            </div>
-            <div class="dot_line"></div>
-            <div id="item_info_bg_middle_2">
-                <div id="item_info_item_icon">
-                    <div id="item_info_item_img"></div>
-                    <div id="item_info_item_icon_cover"></div>
-                    <div id="item_info_item_icon_frame"></div>
-                </div>
-                <div id="item_info_damage_increase">
-                    <div id="item_info_damage_increase_txt">공격력 증가량</div>
-                    <div id="item_info_damage_increase_num"></div>
-                    <div id="item_info_item_req">
-                        <div id="item_info_req_lev"></div>
-                        <div id="item_info_req_0"></div>
-                        <div id="item_info_req_str"></div>
-                        <div class="item_info_req_0_1"></div>
-                        <div class="item_info_req_0_1"></div>
-                        <div class="item_info_req_0_1"></div>
-                        <div id="item_info_req_luk"></div>
-                        <div class="item_info_req_0_1"></div>
-                        <div class="item_info_req_0_1"></div>
-                        <div class="item_info_req_0_1"></div>
-                        <div id="item_info_req_dex"></div>
-                        <div class="item_info_req_0_2"></div>
-                        <div class="item_info_req_0_2"></div>
-                        <div class="item_info_req_0_2"></div>
-                        <div id="item_info_req_int"></div>
-                        <div class="item_info_req_0_2"></div>
-                        <div class="item_info_req_0_2"></div>
-                        <div class="item_info_req_0_2"></div>
-                    </div>
-                </div>
-            </div>
-            <div id="item_info_bg_middle_3">
-                <div id="item_info_job_bg">
-                    <div id="item_info_job_beginner"></div>
-                    <div id="item_info_job_warrior"></div>
-                    <div id="item_info_job_magician"></div>
-                    <div id="item_info_job_bowman"></div>
-                    <div id="item_info_job_thief"></div>
-                    <div id="item_info_job_pirate"></div>
-                </div>
-            </div>
-            <div class="dot_line"></div>
-            <div id="item_info_bg_middle_4">
-                <div id="equip_type">장비분류 : <font id="equip_type_txt">Unknown</font></div>
-                <div id="equip_str"><font class="equip_num">STR : <font class="equip_total" id="equip_str_total">+100</font></font><font id="equip_str_detail"> (<font id="equip_str_basic">30</font> <font class="equip_add" id="equip_str_add">+10</font> <font class="equip_work" id="equip_str_work">+60</font></font>)</div>
-                <div id="equip_dex"><font class="equip_num">DEX : <font class="equip_total" id="equip_dex_total">+100</font></font><font id="equip_dex_detail"> (<font id="equip_dex_basic">30</font> <font class="equip_add" id="equip_dex_add">+10</font> <font class="equip_work" id="equip_dex_work">+60</font></font>)</div>
-                <div id="equip_str"><font class="equip_num">INT : <font class="equip_total" id="equip_int_total">+100</font></font><font id="equip_int_detail"> (<font id="equip_int_basic">30</font> <font class="equip_add" id="equip_int_add">+10</font> <font class="equip_work" id="equip_int_work">+60</font></font>)</div>
-                <div id="equip_str"><font class="equip_num">LUK : <font class="equip_total" id="equip_luk_total">+100</font></font><font id="equip_luk_detail"> (<font id="equip_luk_basic">30</font> <font class="equip_add" id="equip_luk_add">+10</font> <font class="equip_work" id="equip_luk_work">+60</font></font>)</div>
-                <div id="equip_ap"><font class="equip_num">공격력 : <font class="equip_total" id="equip_ap_total">+50</font></font><font id="equip_ap_detail"> (<font id="equip_ap_basic">30</font> <font class="equip_add" id="equip_ap_add">+5</font> <font class="equip_work" id="equip_ap_work">+15</font></font>)</div>
-                <div id="equip_ma"><font class="equip_num">미력 : <font class="equip_total" id="equip_ma_total">+50</font></font><font id="equip_ma_detail"> (<font id="equip_ma_basic">30</font> <font class="equip_add" id="equip_ma_add">+5</font> <font class="equip_work" id="equip_ma_work">+15</font></font>)</div>
-            </div>
-            <div class="dot_line"></div>
-            <div id="item_info_bg_middle_5">
-                <div id="item_info_potential_img"></div>
-                <div id="item_info_potential_txt">잠재옵션</div>
-            </div>
-            <div class="dot_line"></div>
-            <div id="item_info_bg_middle_6">
+    </div>
 
-
-
-            </div>
-            <div id="item_info_bg_bottom"></div>
+    <!-- 아이템 툴팁 (팝업) -->
+    <div id="item_info_bg">
+        <div id="close_edit_btn">
+            <div class="item_info_btn" id="item_info_close_btn">닫기</div>
+            <div class="item_info_btn" id="item_info_edit_btn">수정</div>
         </div>
-        
-    </body>
+        <div id="item_info_bg_frame_cover"></div>
+        <div id="item_info_bg_top"></div>
+        <div id="item_info_bg_middle_1">
+            <div id="item_info_stars">
+                <div id="item_info_stars_1">
+                    <div id="item_info_star_0_5">
+                        <div class="star_blank" id="star_0"></div>
+                        <div class="star_blank"></div>
+                        <div class="star_blank"></div>
+                        <div class="star_blank"></div>
+                        <div class="star_blank"></div>
+                    </div>
+                    <div id="item_info_star_6_10">
+                        <div class="star_blank" id="star_6"></div>
+                        <div class="star_blank"></div>
+                        <div class="star_blank"></div>
+                        <div class="star_blank"></div>
+                        <div class="star_blank"></div>
+                    </div>
+                    <div id="item_info_star_11_15">
+                        <div class="star_blank" id="star_11"></div>
+                        <div class="star_blank"></div>
+                        <div class="star_blank"></div>
+                        <div class="star_blank"></div>
+                        <div class="star_blank"></div>
+                    </div>
+                </div>
+                <div id="item_info_stars_2">
+                    <div id="item_info_star_16_20">
+                        <div class="star_blank" id="star_16"></div>
+                        <div class="star_blank"></div>
+                        <div class="star_blank"></div>
+                        <div class="star_blank"></div>
+                        <div class="star_blank"></div>
+                    </div>
+                    <div id="item_info_star_21_25">
+                        <div class="star_blank" id="star_21"></div>
+                        <div class="star_blank"></div>
+                        <div class="star_blank"></div>
+                        <div class="star_blank"></div>
+                        <div class="star_blank"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="item_info_soul_name">위대한 소울의</div>
+            <div id="item_info_item_name">아이템 이름</div>
+        </div>
+        <div class="dot_line"></div>
+        <div id="item_info_bg_middle_2">
+            <div id="item_info_item_icon">
+                <div id="item_info_item_img"></div>
+                <div id="item_info_item_icon_cover"></div>
+                <div id="item_info_item_icon_frame"></div>
+            </div>
+            <div id="item_info_damage_increase">
+                <div id="item_info_damage_increase_txt">공격력 증가량</div>
+                <div id="item_info_damage_increase_num"></div>
+                <div id="item_info_item_req">
+                    <div id="item_info_req_lev"></div>
+                    <div id="item_info_req_0"></div>
+                    <div id="item_info_req_str"></div>
+                    <div class="item_info_req_0_1"></div>
+                    <div class="item_info_req_0_1"></div>
+                    <div class="item_info_req_0_1"></div>
+                    <div id="item_info_req_luk"></div>
+                    <div class="item_info_req_0_1"></div>
+                    <div class="item_info_req_0_1"></div>
+                    <div class="item_info_req_0_1"></div>
+                    <div id="item_info_req_dex"></div>
+                    <div class="item_info_req_0_2"></div>
+                    <div class="item_info_req_0_2"></div>
+                    <div class="item_info_req_0_2"></div>
+                    <div id="item_info_req_int"></div>
+                    <div class="item_info_req_0_2"></div>
+                    <div class="item_info_req_0_2"></div>
+                    <div class="item_info_req_0_2"></div>
+                </div>
+            </div>
+        </div>
+        <div id="item_info_bg_middle_3">
+            <div id="item_info_job_bg">
+                <div id="item_info_job_beginner"></div>
+                <div id="item_info_job_warrior"></div>
+                <div id="item_info_job_magician"></div>
+                <div id="item_info_job_bowman"></div>
+                <div id="item_info_job_thief"></div>
+                <div id="item_info_job_pirate"></div>
+            </div>
+        </div>
+        <div class="dot_line"></div>
+        <div id="item_info_bg_middle_4">
+            <div id="equip_type">장비분류 : <font id="equip_type_txt">Unknown</font>
+            </div>
+            <div id="equip_str">
+                <font class="equip_num">STR : <font class="equip_total" id="equip_str_total">+100</font>
+                </font>
+                <font id="equip_str_detail"> (<font id="equip_str_basic">30</font>
+                    <font class="equip_add" id="equip_str_add">+10</font>
+                    <font class="equip_work" id="equip_str_work">+60</font>
+                </font>)
+            </div>
+            <div id="equip_dex">
+                <font class="equip_num">DEX : <font class="equip_total" id="equip_dex_total">+100</font>
+                </font>
+                <font id="equip_dex_detail"> (<font id="equip_dex_basic">30</font>
+                    <font class="equip_add" id="equip_dex_add">+10</font>
+                    <font class="equip_work" id="equip_dex_work">+60</font>
+                </font>)
+            </div>
+            <div id="equip_str">
+                <font class="equip_num">INT : <font class="equip_total" id="equip_int_total">+100</font>
+                </font>
+                <font id="equip_int_detail"> (<font id="equip_int_basic">30</font>
+                    <font class="equip_add" id="equip_int_add">+10</font>
+                    <font class="equip_work" id="equip_int_work">+60</font>
+                </font>)
+            </div>
+            <div id="equip_str">
+                <font class="equip_num">LUK : <font class="equip_total" id="equip_luk_total">+100</font>
+                </font>
+                <font id="equip_luk_detail"> (<font id="equip_luk_basic">30</font>
+                    <font class="equip_add" id="equip_luk_add">+10</font>
+                    <font class="equip_work" id="equip_luk_work">+60</font>
+                </font>)
+            </div>
+            <div id="equip_ap">
+                <font class="equip_num">공격력 : <font class="equip_total" id="equip_ap_total">+50</font>
+                </font>
+                <font id="equip_ap_detail"> (<font id="equip_ap_basic">30</font>
+                    <font class="equip_add" id="equip_ap_add">+5</font>
+                    <font class="equip_work" id="equip_ap_work">+15</font>
+                </font>)
+            </div>
+            <div id="equip_ma">
+                <font class="equip_num">미력 : <font class="equip_total" id="equip_ma_total">+50</font>
+                </font>
+                <font id="equip_ma_detail"> (<font id="equip_ma_basic">30</font>
+                    <font class="equip_add" id="equip_ma_add">+5</font>
+                    <font class="equip_work" id="equip_ma_work">+15</font>
+                </font>)
+            </div>
+        </div>
+        <div class="dot_line"></div>
+        <div id="item_info_bg_middle_5">
+            <div id="item_info_potential_img"></div>
+            <div id="item_info_potential_txt">잠재옵션</div>
+        </div>
+        <div class="dot_line"></div>
+        <div id="item_info_bg_middle_6">
+
+
+
+        </div>
+        <div id="item_info_bg_bottom"></div>
+    </div>
+
+</body>
+
 </html>

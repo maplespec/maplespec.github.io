@@ -36,5 +36,7 @@ $(document).ready(function() {
         $(".item_img").on("mousemove", item_tooltip);
         $(".item_img").on("mouseout", item_tooltip_close);
     });
+
+    
 });
 
