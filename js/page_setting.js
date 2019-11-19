@@ -15,9 +15,9 @@ $(document).ready(function() {
     });
 
     $(document).mouseup(function() {
+        $('html').css("cursor", "url('image/cursor/default.png'), auto");
         $(".item_img").css("animation", "item_over 0.5s infinite");
         $(".symbol_edit_btn, .item_info_btn").css("animation", "button_over 0.75s infinite");
-        $('html').css("cursor", "url('image/cursor/default.png'), auto");
     });
 
     var equip_slot_path = "url('image/equip_win/";

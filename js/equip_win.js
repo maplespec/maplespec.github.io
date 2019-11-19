@@ -19,6 +19,7 @@ $(document).ready(function() {
     }
 
     var item_tooltip_close = function() {
+        
         $("#item_info_bg").css("display", "none");
     }
 
