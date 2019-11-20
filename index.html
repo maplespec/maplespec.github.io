@@ -9,18 +9,23 @@
         height: 100%;
         margin: 0;
     }
-
+/*
     #job_select_bg {
-
-    }
-
+        width: 1366px;
+        height: 768px;
+        background-color: red;
+        background-repeat: no-repeat;
+        position: absolute;
+        z-index: 1;
+    }*/
+/*
     #bg {
         width: 1366px;
         height: 768px;
         background-image: url('image/bg.png');
         background-repeat: no-repeat;
         position: absolute;
-    }
+    }*/
 
     #equip_arcane_win {
         margin-left: 0px;
@@ -46,7 +51,9 @@
 </head>
 
 <body>
-    <div id="job_select_bg"></div>
+    <div id="job_select_bg">
+        
+    </div>
     <div id="bg"></div>
     <!-- 장비 + 심볼 창 -->
     <div id="equip_arcane_win">
@@ -241,8 +248,8 @@
 
     <!-- 아이템 툴팁 (팝업) -->
     <div id="item_info_bg">
-        <div id="close_edit_btn">
-            <div class="item_info_btn" id="item_info_close_btn">닫기</div>
+        <div id="item_info_btn">
+            <div class="item_info_btn" id="item_info_close_btn"></div>
             <div class="item_info_btn" id="item_info_edit_btn">수정</div>
             <div class="item_info_btn" id="item_info_reset_btn">리셋</div>
         </div>

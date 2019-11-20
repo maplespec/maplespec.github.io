@@ -4,7 +4,7 @@
     display: none;
 }
 
-#close_edit_btn {
+#item_info_btn {
     width: 30px;
     height: 70px;
     background-color: white;
@@ -13,10 +13,17 @@
     right: 0px;
 }
 
-.item_info_btn {
-    font-size: 8.6pt;
-    margin-top: 5px;
+#item_info_close_btn {
+    background-image: url('../image/close_btn.png');
+    background-repeat: no-repeat;
+    width: 13px;
+    height: 13px;
+}
+
+#item_info_edit_btn, #item_info_reset_btn {
     border: 1px solid black;
+    margin-top: 10px;
+    font-size: 8.6pt;
 }
 
 #item_info_bg_frame_cover {
