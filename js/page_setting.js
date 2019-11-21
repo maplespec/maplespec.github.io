@@ -8,16 +8,19 @@ $(document).ready(function() {
         return false;
     });
 
+    $(".item_img").css("animation", "item_over 0.5s infinite");
+    $("[cursor=button_over]").css("animation", "button_over 0.75s infinite");
+
     $(document).mousedown(function() {
         $(".item_img").css("animation", "none");
-        $(".symbol_edit_btn, .item_info_btn").css("animation", "none");
+        $("[cursor=button_over]").css("animation", "none");
         $('html').css("cursor", "url('image/cursor/click.png'), auto");
     });
 
     $(document).mouseup(function() {
         $('html').css("cursor", "url('image/cursor/default.png'), auto");
         $(".item_img").css("animation", "item_over 0.5s infinite");
-        $(".symbol_edit_btn, .item_info_btn").css("animation", "button_over 0.75s infinite");
+        $("[cursor=button_over]").css("animation", "button_over 0.75s infinite");
     });
 
     var equip_slot_path = "url('image/equip_win/";
@@ -39,4 +42,7 @@ $(document).ready(function() {
         var symbol_img = $(".symbol_img").eq(i);
         symbol_img.css("background-image", symbol_img_path + symbol_img.attr("id").replace("_img","") + path_end);
     }
+
+    /* Test https://superkts.com/jquery/draggable */
+
 });

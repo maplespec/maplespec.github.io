@@ -38,6 +38,10 @@ $(document).ready(function() {
         $(".item_img").on("mouseout", item_tooltip_close);
     });
 
+    $("#arcane_btn").click(function() {
+        $("#arcane_bg").toggle();
+    });
+   
     
 });
 

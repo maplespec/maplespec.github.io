@@ -1,6 +1,7 @@
 #arcane_bg {
     margin-left: 232px;
     position: absolute;
+    display: none;
 }
 
 #arcane_bg_top {
@@ -160,6 +161,14 @@
     margin-top: 27px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.symbol_edit_btn:hover {
+    background-image: url('../image/arcane_win/edit_btn_over.png');
+}
+
+.symbol_edit_btn:active {
+    background-image: url('../image/arcane_win/edit_btn_click.png');
 }
 
 .symbol_level {

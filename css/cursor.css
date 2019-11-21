@@ -2,14 +2,6 @@ html {
     cursor: url('../image/cursor/default.png'), auto;
 }
 
-.item_img {
-    animation: item_over 0.5s infinite;
-}
-
-.symbol_edit_btn, .item_info_btn {
-    animation: button_over 1s infinite;
-}
-
 @keyframes item_over {
     0% {
         cursor: url("../image/cursor/item_over_1.png") 5 5, auto;
