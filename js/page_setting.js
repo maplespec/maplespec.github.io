@@ -44,5 +44,6 @@ $(document).ready(function() {
     }
 
     /* Test https://superkts.com/jquery/draggable */
+    $("#equip_arcane_win").draggable();
 
 });
