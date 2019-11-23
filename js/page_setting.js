@@ -3,22 +3,49 @@ $(document).ready(function() {
         return false;
     });
 
-    $(document).bind("selectstart dragstart", function(e) {
-        e.preventDefault();
-        return false;
-    });
-
     $(".item_img").css("animation", "item_over 0.5s infinite");
     $("[cursor=button_over]").css("animation", "button_over 0.75s infinite");
+ 
+    function range(start, end) {
+        var array = new Array();
+        for(var i = start; i < end; i++) {
+            array.push(i);
+        }
+        return array;
+    }
+
+    var win_width = function() {
+        if($("#arcane_bg").is(":visible")) {
+            $("#equip_arcane_win").css("width", "421px");
+            for (var i = 946; i <= 1143; i++) {
+                if($("#equip_arcane_win").css("left") == i + "px") {
+                    $("#equip_arcane_win").css("left", "945px");
+                }
+            }
+        } else {
+            $("#equip_arcane_win").css("width", "232px");
+        }
+    }
+
+    var win_block_drag = function() {
+        if($("#item_info_bg").is(":visible")) {
+            $("#equip_arcane_win").draggable("disable");
+        } else {
+            $("#equip_arcane_win").draggable("enable");
+        }
+    }
+
+    setInterval(function() {
+        win_width();
+        win_block_drag();
+    }, 10);
 
     $(document).mousedown(function() {
         $(".item_img").css("animation", "none");
         $("[cursor=button_over]").css("animation", "none");
-        $('html').css("cursor", "url('image/cursor/click.png'), auto");
     });
 
     $(document).mouseup(function() {
-        $('html').css("cursor", "url('image/cursor/default.png'), auto");
         $(".item_img").css("animation", "item_over 0.5s infinite");
         $("[cursor=button_over]").css("animation", "button_over 0.75s infinite");
     });
@@ -44,8 +71,12 @@ $(document).ready(function() {
     }
 
     /* Test https://superkts.com/jquery/draggable */
-    $(function() {
-        $("#equip_arcane_win").draggable();
+    $("#equip_arcane_win").draggable({
+        handle: $("#equip_win_title"),
+        containment: $("#bg"),
+        stop: function(event, ui) {
+            $("body").css("cursor", "url('image/cursor/default.png'), auto");
+        }
     });
 
 });

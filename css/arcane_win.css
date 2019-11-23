@@ -2,6 +2,7 @@
     margin-left: 232px;
     position: absolute;
     display: none;
+    z-index: 1;
 }
 
 #arcane_bg_top {

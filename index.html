@@ -4,21 +4,21 @@
     * {
         font-family: '돋움', Dotum;
     }
-    
-    html, body {
-        height: 100%;
-        width: 100%;
+
+    body {
+        width: 1366px;
+        height: 768px;
         margin: 0;
+        overflow: hidden;
     }
-/*
+
     #job_select_bg {
-        width: 500px;
-        height: 500px;
+        width: 100%;
+        height: 100%;
         background-color: red;
         background-repeat: no-repeat;
         position: absolute;
-        z-index: 1;
-    }*/
+    }
 
     #bg {
         width: 1366px;
@@ -29,22 +29,19 @@
     }
 
     #equip_arcane_win {
-        width: 421px;
         height: 330px;
     }
 </style>
 
 <head>
     <meta charset="utf-8">
-    <title>Page</title>
+    <title>MapleStory</title>
     <link href="css/cursor.css" rel="stylesheet">
     <link href="css/equip_win.css" rel="stylesheet">
     <link href="css/arcane_win.css" rel="stylesheet">
     <link href="css/item_info_win.css" rel="stylesheet">
-    <!--<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
-    <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
-    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="js/page_setting.js"></script>
     <script src="js/equip_win.js"></script>
     <script type="text/javascript">
@@ -55,6 +52,7 @@
 </head>
 
 <body>
+<div id="window_frame">
     <div id="job_select_bg">
         
     </div>
@@ -63,6 +61,7 @@
     <div id="equip_arcane_win">
         <!-- 장비 창 -->
         <div id="equip_bg">
+            <div id="equip_win_title"></div>
             <div id="equip_tab">
                 <div id="tab_1"></div>
                 <div id="tab_2"></div>
@@ -413,7 +412,8 @@
         </div>
         <div id="item_info_bg_bottom"></div>
     </div>
-
+    
+</div>
 </body>
 
 </html>

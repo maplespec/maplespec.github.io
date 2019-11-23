@@ -4,11 +4,16 @@
     width: 232px;
     height: 330px;
     position: absolute;
-    z-index: 0;
+    z-index: 1;
+}
+
+#equip_win_title {
+    width: 232px;
+    height: 19px;
 }
 
 #equip_tab {
-    margin-top: 21px;
+    margin-top: 2px;
     margin-left: 7px;
 }
 
