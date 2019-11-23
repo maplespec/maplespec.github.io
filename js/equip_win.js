@@ -2,19 +2,18 @@ var item_tooltip = function(e) {
     var x = e.clientX - 10;
     var y = e.clientY - 10;
     var width = 261;
-    var left = $("#item_info_bg").offset().left;
     var height = $("#item_info_bg").height();
+    var left = $("#item_info_bg").offset().left;
     var top = $("#item_info_bg").offset().top;
-    var y_gap = height - (768 - top);
-    var x_gap = width - (1366 - left);
-
-    if(y_gap >= 0) {
-        y = top - y_gap;
+    $("#item_info_bg").css("display", "block");
+    if (x > 1366 - width) {
+        x = 1366 - width;
     }
-
-    if(x_gap >= 0) {
-        x = left - x_gap;
+    if (y > 768 - height) {
+        y = 768 - height;
     }
+    $("#item_info_bg").css("left", x + "px");
+    $("#item_info_bg").css("top", y + "px");
 
     var item_name = ["반지", "모자", "엠블렘",                      // 모자 1, 엠블렘 2
                      "반지", "펜던트", "얼굴장식", "뱃지",           // 무기 13, 상의 14
@@ -26,11 +25,7 @@ var item_tooltip = function(e) {
     var item_image = "image/equip_win/item_img/" + e.target.id + ".png";
     $("#item_info_item_name").text(item_name[index]);
     $("#equip_type_txt").text(item_name[index]);
-    $("#item_info_item_img").css("background-image", "url('" + item_image + "')");
- 
-    $("#item_info_bg").css("left", x + "px");
-    $("#item_info_bg").css("top", y + "px");
-    $("#item_info_bg").css("display", "block");        
+    $("#item_info_item_img").css("background-image", "url('" + item_image + "')");           
 }
 
 var item_tooltip_close = function() {
