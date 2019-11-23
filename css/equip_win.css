@@ -164,10 +164,10 @@
     right: 11px;
 }
 
-#arcane_btn:hover {
+#arcane_btn:not(.no-hover):hover {
     background-image: url('../image/equip_win/arcane_btn_over.png');
 }
 
-#arcane_btn:active {
+#arcane_btn:not(.no-active):active {
     background-image: url('../image/equip_win/arcane_btn_click.png');
 }

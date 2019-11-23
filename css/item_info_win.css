@@ -8,7 +8,7 @@
 #item_info_btn {
     width: 30px;
     height: 70px;
-    background-color: white;
+    background-color: black;
     border: 1px solid red;
     position: absolute;
     right: 0px;
@@ -21,10 +21,18 @@
     height: 13px;
 }
 
+#item_info_close_btn:hover {
+    background-image: url('../image/close_btn_over.png');
+}
+
+#item_info_close_btn:active {
+    background-image: url('../image/close_btn_click.png');
+}
+
 #item_info_edit_btn, #item_info_reset_btn {
-    border: 1px solid black;
     margin-top: 10px;
     font-size: 8.6pt;
+    color: white;
 }
 
 #item_info_bg_frame_cover {

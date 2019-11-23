@@ -32,25 +32,32 @@ var item_tooltip_close = function() {
     $("#item_info_bg").css("display", "none");
 }
 
+var itemimgClicked = false;
+var item_img_click = function() {
+    itemimgClicked = true;
+    $("#item_info_bg").css("pointer-events", "inherit");
+    $(".item_img").off("mousemove");
+    $(".item_img").off("mouseout");
+}
+
+var iteminfobtnClicked = false;
+var item_info_btn_click = function() {
+    iteminfobtnClicked = true;
+    item_tooltip_close();
+    $("#item_info_bg").css("pointer-events", "none");
+    $(".item_img").on("mousemove", item_tooltip);
+    $(".item_img").on("mouseout", item_tooltip_close);
+}
+
+var arcane_btn_click = function() {
+    $("#arcane_bg").toggle();
+}
+
 $(document).ready(function() {
     $(".item_img").on("mousemove", item_tooltip);
     $(".item_img").on("mouseout", item_tooltip_close);
-    $(".item_img").click(function() {
-        $("#item_info_bg").css("pointer-events", "inherit");
-        $(".item_img").off("mousemove");
-        $(".item_img").off("mouseout");
-    });
-    
-    $(".item_info_btn").click(function() {
-        item_tooltip_close();
-        $("#item_info_bg").css("pointer-events", "none");
-        $(".item_img").on("mousemove", item_tooltip);
-        $(".item_img").on("mouseout", item_tooltip_close);
-    });
-
-    $("#arcane_btn").click(function() {
-        $("#arcane_bg").toggle();
-    });
-    
+    $(".item_img").click(item_img_click);
+    $(".item_info_btn").click(item_info_btn_click);
+    $("#arcane_btn").click(arcane_btn_click);
 });
 

@@ -164,11 +164,11 @@
     margin-right: auto;
 }
 
-.symbol_edit_btn:hover {
+.symbol_edit_btn:not(.no-hover):hover {
     background-image: url('../image/arcane_win/edit_btn_over.png');
 }
 
-.symbol_edit_btn:active {
+.symbol_edit_btn:not(.no-active):active {
     background-image: url('../image/arcane_win/edit_btn_click.png');
 }
 

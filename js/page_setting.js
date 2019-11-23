@@ -1,3 +1,53 @@
+function range(start, end) {
+    var array = new Array();
+    for(var i = start; i < end; i++) {
+        array.push(i);
+    }
+    return array;
+}
+
+var win_width = function() {
+    if($("#arcane_bg").is(":visible")) {
+        $("#equip_arcane_win").css("width", "421px");
+        for (var i = 946; i <= 1143; i++) {
+            if($("#equip_arcane_win").css("left") == i + "px") {
+                $("#equip_arcane_win").css("left", "945px");
+            }
+        }
+    } else {
+        $("#equip_arcane_win").css("width", "232px");
+    }
+}
+
+var win_block_drag = function() {
+    if($("#item_info_bg").is(":visible")) {
+        $("#equip_arcane_win").draggable("disable");
+    } else {
+        $("#equip_arcane_win").draggable("enable");
+    }
+}
+
+var disable_cursor = function() {
+    if($("#item_info_bg").is(":visible") && itemimgClicked == true) {
+        $(".item_img").css("animation", "none");
+        $("[cursor=button_over]").css("animation", "none");
+        itemimgClicked = false;
+        $("#arcane_btn").off("click", arcane_btn_click);
+        //$(".symbol_edit_btn").off("click", );
+        $(".symbol_edit_btn, #arcane_btn").addClass("no-hover");
+        $(".symbol_edit_btn, #arcane_btn").addClass("no-active");
+    }
+    if(iteminfobtnClicked == true) {
+        $(".item_img").css("animation", "item_over 0.5s infinite");
+        $("[cursor=button_over]").css("animation", "button_over 0.75s infinite");
+        iteminfobtnClicked = false;
+        $("#arcane_btn").on("click", arcane_btn_click);
+        //$(".symbol_edit_btn").on("click", );
+        $(".symbol_edit_btn, #arcane_btn").removeClass("no-hover");
+        $(".symbol_edit_btn, #arcane_btn").removeClass("no-active");
+    }
+}
+
 $(document).ready(function() {
     $(document).contextmenu(function() {
         return false;
@@ -5,57 +55,13 @@ $(document).ready(function() {
 
     $(".item_img").css("animation", "item_over 0.5s infinite");
     $("[cursor=button_over]").css("animation", "button_over 0.75s infinite");
+    $("[cursor=btn_button_over]").css("animation", "button_over 0.75s infinite");
  
-    function range(start, end) {
-        var array = new Array();
-        for(var i = start; i < end; i++) {
-            array.push(i);
-        }
-        return array;
-    }
-
-    var win_width = function() {
-        if($("#arcane_bg").is(":visible")) {
-            $("#equip_arcane_win").css("width", "421px");
-            for (var i = 946; i <= 1143; i++) {
-                if($("#equip_arcane_win").css("left") == i + "px") {
-                    $("#equip_arcane_win").css("left", "945px");
-                }
-            }
-        } else {
-            $("#equip_arcane_win").css("width", "232px");
-        }
-    }
-
-    var win_block_drag = function() {
-        if($("#item_info_bg").is(":visible")) {
-            $("#equip_arcane_win").draggable("disable");
-        } else {
-            $("#equip_arcane_win").draggable("enable");
-        }
-    }
-
-    var disable_cursor = function() {
-        if($("#item_info_bg").is(":visible")) {
-            
-        }
-    }
-
-
     setInterval(function() {
         win_width();
         win_block_drag();
+        disable_cursor();
     }, 10);
-
-    $(document).mousedown(function() {
-        $(".item_img").css("animation", "none");
-        $("[cursor=button_over]").css("animation", "none");
-    });
-
-    $(document).mouseup(function() {
-        $(".item_img").css("animation", "item_over 0.5s infinite");
-        $("[cursor=button_over]").css("animation", "button_over 0.75s infinite");
-    });
 
     var equip_slot_path = "url('image/equip_win/";
     var item_img_path = "url('image/equip_win/item_img/";
@@ -77,7 +83,6 @@ $(document).ready(function() {
         symbol_img.css("background-image", symbol_img_path + symbol_img.attr("id").replace("_img","") + path_end);
     }
 
-    /* Test https://superkts.com/jquery/draggable */
     $("#equip_arcane_win").draggable({
         handle: $("#equip_win_title"),
         containment: $("#bg"),
@@ -92,4 +97,16 @@ $(document).ready(function() {
         }
     });
 
+    function getContainment($box, $drag) {
+        var x1 = $box.offset().left - 1300;
+        var y1 = $box.offset().top;
+        var x2 = $box.offset().left + $box.width() - $drag.width();
+        var y2 = $box.offset().top + $box.height() - $drag.height();
+        return [x1, y1, x2, y2];
+    }
+    $("#window_frame").draggable({
+        handle: $("#window_title"),
+        containment: getContainment($("#body"), $("#windo_frame"))
+        
+    });
 });

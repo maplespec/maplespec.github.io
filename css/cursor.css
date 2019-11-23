@@ -1,9 +1,17 @@
-html, body {
+* {
     cursor: url('../image/cursor/default.png'), auto;
 }
 
 *:active {
     cursor: url('../image/cursor/click.png'), auto;
+}
+
+html, #window_title {
+    cursor: auto;
+}
+
+html:active, #window_title:active {
+    cursor: auto;
 }
 
 @keyframes item_over {

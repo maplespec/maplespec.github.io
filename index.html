@@ -3,26 +3,36 @@
 <style type="text/css">
     * {
         font-family: '돋움', Dotum;
+        user-select: none;
     }
 
     body {
-        width: 1366px;
-        height: 768px;
+        width: 100%;
+        height: 100%;
         margin: 0;
         overflow: hidden;
     }
 
-    #job_select_bg {
-        width: 100%;
-        height: 100%;
-        background-color: red;
+    #window_frame {
+        width: 1368px;
+        height: 795px;
+        background-image: url('image/win_frame.png');
         background-repeat: no-repeat;
+        position: absolute;
+        z-index: -1;
+    }
+
+    #window_title {
+        width: 1368px;
+        height: 26px;
         position: absolute;
     }
 
     #bg {
         width: 1366px;
         height: 768px;
+        margin-left: 1px;
+        margin-top: 26px;
         background-image: url('image/bg.png');
         background-repeat: no-repeat;
         position: absolute;
@@ -51,12 +61,10 @@
     </script>
 </head>
 
-<body>
+<body id="body">
 <div id="window_frame">
-    <div id="job_select_bg">
-        
-    </div>
-    <div id="bg"></div>
+    <div id="window_title"></div>
+<div id="bg">
     <!-- 장비 + 심볼 창 -->
     <div id="equip_arcane_win">
         <!-- 장비 창 -->
@@ -253,9 +261,9 @@
     <!-- 아이템 툴팁 (팝업) -->
     <div id="item_info_bg">
         <div id="item_info_btn">
-            <div class="item_info_btn" id="item_info_close_btn" cursor="button_over"></div>
-            <div class="item_info_btn" id="item_info_edit_btn" cursor="button_over">수정</div>
-            <div class="item_info_btn" id="item_info_reset_btn" cursor="button_over">리셋</div>
+            <div class="item_info_btn" id="item_info_close_btn" cursor="btn_button_over"></div>
+            <div class="item_info_btn" id="item_info_edit_btn" cursor="btn_button_over">수정</div>
+            <div class="item_info_btn" id="item_info_reset_btn" cursor="btn_button_over">리셋</div>
         </div>
         <div id="item_info_bg_frame_cover"></div>
         <div id="item_info_bg_top"></div>
@@ -413,6 +421,7 @@
         <div id="item_info_bg_bottom"></div>
     </div>
     
+</div>
 </div>
 </body>
 
