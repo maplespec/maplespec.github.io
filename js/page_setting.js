@@ -74,8 +74,16 @@ $(document).ready(function() {
     $("#equip_arcane_win").draggable({
         handle: $("#equip_win_title"),
         containment: $("#bg"),
+        start: function(event, ui) {
+            console.log("Drag start");
+            $(".item_img").off("mousemove");
+            $(".item_img").off("mouseout");
+        },
         stop: function(event, ui) {
             $("body").css("cursor", "url('image/cursor/default.png'), auto");
+            console.log("Drag end");
+            $(".item_img").on("mousemove", item_tooltip);
+            $(".item_img").on("mouseout", item_tooltip_close);
         }
     });
 
