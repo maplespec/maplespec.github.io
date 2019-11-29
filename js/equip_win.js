@@ -1,6 +1,6 @@
 var item_tooltip = function(e) {
-    var x = e.clientX - 10;
-    var y = e.clientY - 10;
+    var x = e.pageX - 10;
+    var y = e.pageY - 10;
     var width = 261;
     var height = $("#item_info_bg").height();
     var left = $("#item_info_bg").offset().left;
