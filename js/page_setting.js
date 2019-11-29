@@ -38,7 +38,7 @@ var disable_cursor = function() {
         $(".symbol_edit_btn, #arcane_btn").addClass("no-active");
     }
     if(iteminfobtnClicked == true) {
-        $(".item_img").css("animation", "item_over 0.5s infinite");
+        $(".item_img").css("animation", "item_over 0.65s infinite");
         $("[cursor=button_over]").css("animation", "button_over 0.75s infinite");
         iteminfobtnClicked = false;
         $("#arcane_btn").on("click", arcane_btn_click);
@@ -53,10 +53,12 @@ $(document).ready(function() {
         return false;
     });
 
-    $(".item_img").css("animation", "item_over 0.5s infinite");
+    $(".item_img").css("animation", "item_over 0.65s infinite");
     $("[cursor=button_over]").css("animation", "button_over 0.75s infinite");
     $("[cursor=btn_button_over]").css("animation", "button_over 0.75s infinite");
- 
+
+    /* 내일 mousedown mouseup 이용해보자...  */
+
     setInterval(function() {
         win_width();
         win_block_drag();
@@ -96,17 +98,19 @@ $(document).ready(function() {
             $(".item_img").on("mouseout", item_tooltip_close);
         }
     });
-
+    /*
     function getContainment($box, $drag) {
-        var x1 = $box.offset().left - 1300;
+        var x1 = $box.offset().left - 1220;
         var y1 = $box.offset().top;
-        var x2 = $box.offset().left + $box.width() - $drag.width();
-        var y2 = $box.offset().top + $box.height() - $drag.height();
+        //var x2 = $box.offset().left + $box.width() - $drag.width();
+        //var y2 = $box.offset().top + $box.height() - $drag.height();
+        var x2 = $box.offset().left + $box.width();
+        var y2 = $box.offset().top + $box.height() + 768;
         return [x1, y1, x2, y2];
     }
     $("#window_frame").draggable({
         handle: $("#window_title"),
         containment: getContainment($("#body"), $("#windo_frame"))
         
-    });
+    });*/
 });
