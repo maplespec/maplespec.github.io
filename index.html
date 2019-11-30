@@ -35,11 +35,27 @@
         margin-top: 26px;
         background-image: url('image/bg.png');
         background-repeat: no-repeat;
-        position: absolute;
+        position: relative;
     }
 
     #equip_arcane_win {
         height: 330px;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    }
+
+    #job_select_win {
+        width: 816px;
+        height: 632px;
+        background-image: url('image/job_select_win/bg.png');
+        background-repeat: no-repeat;
+        position: absolute;
+        margin: auto;
+        left:0;
+        right: 0;
+        top: 0;
+        bottom: 0;
     }
 </style>
 
@@ -65,6 +81,10 @@
 <div id="window_frame">
     <div id="window_title"></div>
 <div id="bg">
+    <!-- 직업 선택 창 -->
+    <div id="job_select_win">
+
+    </div>
     <!-- 장비 + 심볼 창 -->
     <div id="equip_arcane_win">
         <!-- 장비 창 -->
