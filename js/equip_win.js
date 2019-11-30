@@ -1,6 +1,6 @@
 var item_tooltip = function(e) {
-    var x = e.pageX - 10;
-    var y = e.pageY - 10;
+    var x = e.clientX;
+    var y = e.clientY - 5;
     var width = 261;
     var height = $("#item_info_bg").height();
     var left = $("#item_info_bg").offset().left;
@@ -53,11 +53,16 @@ var arcane_btn_click = function() {
     $("#arcane_bg").toggle();
 }
 
+var equip_win_close_btn_click = function() {
+    $("#equip_arcane_win").css("display", "none");
+}
+
 $(document).ready(function() {
     $(".item_img").on("mousemove", item_tooltip);
     $(".item_img").on("mouseout", item_tooltip_close);
     $(".item_img").click(item_img_click);
     $(".item_info_btn").click(item_info_btn_click);
     $("#arcane_btn").click(arcane_btn_click);
+    $("#equip_win_close_btn").click(equip_win_close_btn_click);
 });
 

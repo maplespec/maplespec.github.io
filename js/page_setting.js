@@ -27,24 +27,22 @@ var win_block_drag = function() {
     }
 }
 
-var disable_cursor = function() {
+var disable_btn = function() {
     if($("#item_info_bg").is(":visible") && itemimgClicked == true) {
-        $(".item_img").css("animation", "none");
-        $("[cursor=button_over]").css("animation", "none");
         itemimgClicked = false;
         $("#arcane_btn").off("click", arcane_btn_click);
+        $("#equip_win_close_btn").off("click", equip_win_close_btn_click);
         //$(".symbol_edit_btn").off("click", );
-        $(".symbol_edit_btn, #arcane_btn").addClass("no-hover");
-        $(".symbol_edit_btn, #arcane_btn").addClass("no-active");
+        $("#equip_win_close_btn, .symbol_edit_btn, #arcane_btn").addClass("no-hover");
+        $("#equip_win_close_btn, .symbol_edit_btn, #arcane_btn").addClass("no-active");
     }
     if(iteminfobtnClicked == true) {
-        $(".item_img").css("animation", "item_over 0.65s infinite");
-        $("[cursor=button_over]").css("animation", "button_over 0.75s infinite");
         iteminfobtnClicked = false;
         $("#arcane_btn").on("click", arcane_btn_click);
+        $("#equip_win_close_btn").on("click", equip_win_close_btn_click);
         //$(".symbol_edit_btn").on("click", );
-        $(".symbol_edit_btn, #arcane_btn").removeClass("no-hover");
-        $(".symbol_edit_btn, #arcane_btn").removeClass("no-active");
+        $("#equip_win_close_btn, .symbol_edit_btn, #arcane_btn").removeClass("no-hover");
+        $("#equip_win_close_btn, .symbol_edit_btn, #arcane_btn").removeClass("no-active");
     }
 }
 
@@ -54,16 +52,45 @@ $(document).ready(function() {
     });
 
     $(".item_img").css("animation", "item_over 0.65s infinite");
-    $("[cursor=button_over]").css("animation", "button_over 0.75s infinite");
-    $("[cursor=btn_button_over]").css("animation", "button_over 0.75s infinite");
-
-    /* 내일 mousedown mouseup 이용해보자...  */
+    $("[cursor*=button_over]").css("animation", "button_over 0.75s infinite");
 
     setInterval(function() {
         win_width();
         win_block_drag();
-        disable_cursor();
+        disable_btn();
     }, 10);
+
+    $(document).mousedown(function() {
+        $(".item_img").css("animation", "none");
+        $("[cursor*=button_over]").css("animation", "none");
+    });
+
+    $(document).mouseup(function() {
+        if($("#item_info_bg").is(":visible")) {
+            $("[cursor=btn_button_over]").css("animation", "button_over 0.75s infinite");
+            $("[cursor=button_over]").css("animation", "none");
+        } else {
+            $(".item_img").css("animation", "item_over 0.65s infinite");
+            $("[cursor=button_over]").css("animation", "button_over 0.75s infinite");
+        }
+        setInterval(function() {
+            if($("#item_info_bg").is(":hidden")) {
+                $(".item_img").css("animation", "item_over 0.65s infinite");
+            }
+        }, 10);
+    });
+
+    $(".item_info_btn").click(function() {
+        $("[cursor=button_over]").css("animation", "button_over 0.75s infinite");
+    });
+
+    $(document).keydown(function(e) {
+        if(e.keyCode == "69" && $("#item_info_bg").is(":hidden")) { // "E"
+            $("#equip_arcane_win").toggle();
+        }
+    });
+
+
 
     var equip_slot_path = "url('image/equip_win/";
     var item_img_path = "url('image/equip_win/item_img/";
@@ -91,9 +118,9 @@ $(document).ready(function() {
         start: function(event, ui) {
             $(".item_img").off("mousemove");
             $(".item_img").off("mouseout");
+
         },
         stop: function(event, ui) {
-            $("body").css("cursor", "url('image/cursor/default.png'), auto");
             $(".item_img").on("mousemove", item_tooltip);
             $(".item_img").on("mouseout", item_tooltip_close);
         }

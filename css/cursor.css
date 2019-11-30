@@ -19,12 +19,21 @@ html:active, #window_title:active {
         cursor: url("../image/cursor/item_over_1.png") 5 5, auto;
     }
     20% {
+        cursor: url("../image/cursor/item_over_1.png") 5 5, auto;
+    }
+    30% {
         cursor: url("../image/cursor/item_over_2.png") 5 5, auto;
     }
     40% {
         cursor: url("../image/cursor/item_over_3.png") 5 5, auto;
     }
+    50% {
+        cursor: url("../image/cursor/item_over_3.png") 5 5, auto;
+    }
     60% {
+        cursor: url("../image/cursor/item_over_3.png") 5 5, auto;
+    }
+    70% {
         cursor: url("../image/cursor/item_over_3.png") 5 5, auto;
     }
     80% {

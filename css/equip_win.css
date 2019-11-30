@@ -12,6 +12,24 @@
     height: 19px;
 }
 
+#equip_win_close_btn {
+    background-image: url('../image/close_btn.png');
+    background-repeat: no-repeat;
+    width: 13px;
+    height: 13px;
+    position: absolute;
+    top: 5px;
+    right: 7px;
+}
+
+#equip_win_close_btn:not(.no-hover):hover {
+    background-image: url('../image/close_btn_over.png');
+}
+
+#equip_win_close_btn:not(.no-active):active {
+    background-image: url('../image/close_btn_click.png');
+}
+
 #equip_tab {
     margin-top: 2px;
     margin-left: 7px;
