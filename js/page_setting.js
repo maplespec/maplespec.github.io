@@ -112,6 +112,9 @@ $(document).ready(function() {
         symbol_img.css("background-image", symbol_img_path + symbol_img.attr("id").replace("_img","") + path_end);
     }
 
+    
+    
+
     $("#equip_arcane_win").draggable({
         handle: $("#equip_win_title"),
         containment: $("#bg"),

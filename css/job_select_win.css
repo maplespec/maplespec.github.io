@@ -1,0 +1,97 @@
+#job_select_win {
+    width: 816px;
+    height: 632px;
+    background-image: url('../image/job_select_win/bg.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    margin: auto;
+    left:0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    text-align: center;
+}
+
+#job_table {
+    display: inline-block;
+    margin-top: 77px;
+}
+
+#job_btn {
+    display: inline-block;
+    margin-top: 23px;
+}
+
+.job_img {
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 117px;
+    height: 117px;
+    margin-left: 25px;
+    margin-top: 25px;
+    float: left;
+    background-image: url('../image/job_select_win/normal/adventurer.png');
+}
+
+#adventurer, #resistance, #mercedes, #angelic_burster, #ark {
+    margin-left: 0px;
+    clear: both;
+}
+
+#adventurer, #dual_blade, #cannon_shooter, #cygnus, #mikhail {
+    margin-top: 0px;
+}
+
+#left_btn {
+    background-image: url('../image/job_select_win/left_btn.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 40px;
+    height: 50px;
+    float: left;
+}
+
+#left_btn:hover {
+    background-image: url('../image/job_select_win/left_btn_over.png');
+}
+
+#left_btn:active {
+    background-image: url('../image/job_select_win/left_btn_click.png');
+}
+
+#select_btn {
+    background-image: url('../image/job_select_win/select_btn.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 132px;
+    height: 44px;
+    margin-top: 3px;
+    margin-left: 100px;
+    margin-right: 100px;
+    float: left;
+}
+
+#select_btn:hover {
+    background-image: url('../image/job_select_win/select_btn_over.png');
+}
+
+#select_btn:active {
+    background-image: url('../image/job_select_win/select_btn_click.png');
+}
+
+#right_btn {
+    background-image: url('../image/job_select_win/right_btn.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 40px;
+    height: 50px;
+    float: left;
+}
+
+#right_btn:hover {
+    background-image: url('../image/job_select_win/right_btn_over.png');
+}
+
+#right_btn:active {
+    background-image: url('../image/job_select_win/right_btn_click.png');
+}

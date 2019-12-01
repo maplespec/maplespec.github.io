@@ -44,19 +44,6 @@
         top: 20px;
         left: 20px;
     }
-
-    #job_select_win {
-        width: 816px;
-        height: 632px;
-        background-image: url('image/job_select_win/bg.png');
-        background-repeat: no-repeat;
-        position: absolute;
-        margin: auto;
-        left:0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-    }
 </style>
 
 <head>
@@ -66,6 +53,7 @@
     <link href="css/equip_win.css" rel="stylesheet">
     <link href="css/arcane_win.css" rel="stylesheet">
     <link href="css/item_info_win.css" rel="stylesheet">
+    <link href="css/job_select_win.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="js/page_setting.js"></script>
@@ -83,8 +71,42 @@
 <div id="bg">
     <!-- 직업 선택 창 -->
     <div id="job_select_win">
-
+        <div id="job_table">
+            <div class="job_img" id="adventurer" cursor="button_over"></div>
+            <div class="job_img" id="dual_blade" cursor="button_over"></div>
+            <div class="job_img" id="cannon_shooter" cursor="button_over"></div>
+            <div class="job_img" id="cygnus" cursor="button_over"></div>
+            <div class="job_img" id="mikhail" cursor="button_over"></div>
+            <!---->
+            <div class="job_img" id="resistance" cursor="button_over"></div>
+            <div class="job_img" id="demon" cursor="button_over"></div>
+            <div class="job_img" id="xenon" cursor="button_over"></div>
+            <div class="job_img" id="aran" cursor="button_over"></div>
+            <div class="job_img" id="evan" cursor="button_over"></div>
+            <!---->
+            <div class="job_img" id="mercedes" cursor="button_over"></div>
+            <div class="job_img" id="phantom" cursor="button_over"></div>
+            <div class="job_img" id="luminous" cursor="button_over"></div>
+            <div class="job_img" id="eunwol" cursor="button_over"></div>
+            <div class="job_img" id="kaiser" cursor="button_over"></div>
+            <!--
+            <div class="job_img" id="angelic_burster"></div>
+            <div class="job_img" id="kinesis"></div>
+            <div class="job_img" id="zero"></div>
+            <div class="job_img" id="cadena"></div>
+            <div class="job_img" id="illium"></div>
+            
+            <div class="job_img" id="ark"></div>
+            <div class="job_img" id="pathfinder"></div>
+            <div class="job_img" id="ho_young"></div>-->
+        </div>
+        <div id="job_btn">
+            <div id="left_btn" cursor="button_over"></div>
+            <div id="select_btn" cursor="button_over"></div>
+            <div id="right_btn" cursor="button_over"></div>
+        </div>
     </div>
+
     <!-- 장비 + 심볼 창 -->
     <div id="equip_arcane_win">
         <!-- 장비 창 -->
