@@ -70,27 +70,6 @@
     background-image: url('../image/job_select_win/left_btn_over.png');
 }
 
-#select_btn {
-    background-image: url('../image/job_select_win/select_btn.png');
-    background-repeat: no-repeat;
-    width: 132px;
-    height: 44px;
-    position: absolute;
-    margin: auto;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-}
-
-#select_btn:hover {
-    background-image: url('../image/job_select_win/select_btn_over.png');
-}
-
-#select_btn:active {
-    background-image: url('../image/job_select_win/select_btn_click.png');
-}
-
 #right_btn {
     background-image: url('../image/job_select_win/right_btn.png');
     background-repeat: no-repeat;
