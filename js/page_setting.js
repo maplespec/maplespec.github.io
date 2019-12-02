@@ -90,11 +90,10 @@ $(document).ready(function() {
         }
     });
 
-
-
     var equip_slot_path = "url('image/equip_win/";
     var item_img_path = "url('image/equip_win/item_img/";
     var symbol_img_path = "url('image/arcane_win/";
+    var job_img_path = "url('image/job_select_win/";
     var path_end = ".png')";
     
     for(var i = 0; i < 25; i++) {
@@ -112,8 +111,20 @@ $(document).ready(function() {
         symbol_img.css("background-image", symbol_img_path + symbol_img.attr("id").replace("_img","") + path_end);
     }
 
-    
-    
+    var job_name = [];
+    for(var i = 0; i < 23; i++) {
+        var job_img = $(".job_img").eq(i);
+        job_name.push(job_img.attr("id"));
+        job_img.css("background-image", job_img_path + "normal/" + job_name[i] + path_end);
+    }
+
+    $(".job_img").hover(function() {
+        var index = $(".job_img").index(this);
+        $(this).css("background-image", job_img_path + "over/" + job_name[index] + path_end);
+    }, function() {
+        var index = $(".job_img").index(this);
+        $(this).css("background-image", job_img_path + "normal/" + job_name[index] + path_end);
+    });
 
     $("#equip_arcane_win").draggable({
         handle: $("#equip_win_title"),

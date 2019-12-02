@@ -13,13 +13,20 @@
 }
 
 #job_table {
-    display: inline-block;
     margin-top: 77px;
 }
 
-#job_btn {
-    display: inline-block;
-    margin-top: 23px;
+#job_page_1, #job_page_2 {
+    width: 685px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+
+#job_page_2 {
+    visibility: hidden;
 }
 
 .job_img {
@@ -38,37 +45,42 @@
     clear: both;
 }
 
-#adventurer, #dual_blade, #cannon_shooter, #cygnus, #mikhail {
+#adventurer, #dual_blade, #cannon_shooter, #cygnus, #mikhail, #angelic_burster, #kinesis, #zero, #cadena, #illium {
     margin-top: 0px;
 }
 
+#job_btn {
+    width: 816px;
+    height: 50px;
+    position: absolute;
+    bottom: 77px;
+}
+
 #left_btn {
-    background-image: url('../image/job_select_win/left_btn.png');
+    background-image: url('../image/job_select_win/left_btn_disabled.png');
     background-repeat: no-repeat;
-    background-position: center;
     width: 40px;
     height: 50px;
-    float: left;
+    position: absolute;
+    left: 175px;
+    bottom: 0;
 }
 
-#left_btn:hover {
+#left_btn:not(.no-hover):hover {
     background-image: url('../image/job_select_win/left_btn_over.png');
-}
-
-#left_btn:active {
-    background-image: url('../image/job_select_win/left_btn_click.png');
 }
 
 #select_btn {
     background-image: url('../image/job_select_win/select_btn.png');
     background-repeat: no-repeat;
-    background-position: center;
     width: 132px;
     height: 44px;
-    margin-top: 3px;
-    margin-left: 100px;
-    margin-right: 100px;
-    float: left;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 #select_btn:hover {
@@ -82,16 +94,13 @@
 #right_btn {
     background-image: url('../image/job_select_win/right_btn.png');
     background-repeat: no-repeat;
-    background-position: center;
     width: 40px;
     height: 50px;
-    float: left;
+    position: absolute;
+    right: 175px;
+    bottom: 0;
 }
 
-#right_btn:hover {
+#right_btn:not(.no-hover):hover {
     background-image: url('../image/job_select_win/right_btn_over.png');
-}
-
-#right_btn:active {
-    background-image: url('../image/job_select_win/right_btn_click.png');
 }
