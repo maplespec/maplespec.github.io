@@ -46,6 +46,12 @@ var disable_btn = function() {
     }
 }
 
+var equip_slot_path = "url('image/equip_win/";
+var item_img_path = "url('image/equip_win/item_img/";
+var symbol_img_path = "url('image/arcane_win/";
+var job_img_path = "url('image/job_select_win/";
+var path_end = ".png')";
+
 $(document).ready(function() {
     $(document).contextmenu(function() {
         return false;
@@ -89,12 +95,6 @@ $(document).ready(function() {
             $("#equip_arcane_win").toggle();
         }
     });
-
-    var equip_slot_path = "url('image/equip_win/";
-    var item_img_path = "url('image/equip_win/item_img/";
-    var symbol_img_path = "url('image/arcane_win/";
-    var job_img_path = "url('image/job_select_win/";
-    var path_end = ".png')";
     
     for(var i = 0; i < 25; i++) {
         var equip_slot = $(".equip_slot").eq(i);
@@ -139,6 +139,7 @@ $(document).ready(function() {
             $(".item_img").on("mouseout", item_tooltip_close);
         }
     });
+    
     /*
     function getContainment($box, $drag) {
         var x1 = $box.offset().left - 1220;

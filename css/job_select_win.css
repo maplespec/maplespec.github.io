@@ -13,16 +13,19 @@
 }
 
 #job_table {
-    margin-top: 77px;
+    width: 558px;
+    height: 489px;
+    position: absolute;
+    z-index: 1;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 #job_page_1, #job_page_2 {
-    width: 685px;
     position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
 }
 
 #job_page_2 {
@@ -34,18 +37,17 @@
     background-position: center;
     width: 117px;
     height: 117px;
-    margin-left: 25px;
-    margin-top: 25px;
+    margin-left: 30px;
+    margin-top: 7px;
     float: left;
-    background-image: url('../image/job_select_win/normal/adventurer.png');
 }
 
-#adventurer, #resistance, #mercedes, #angelic_burster, #ark {
+#adventurer, #mikhail, #aran, #luminous, #kinesis, #ark {
     margin-left: 0px;
     clear: both;
 }
 
-#adventurer, #dual_blade, #cannon_shooter, #cygnus, #mikhail, #angelic_burster, #kinesis, #zero, #cadena, #illium {
+#adventurer, #dual_blade, #cannon_shooter, #cygnus, #kinesis, #zero, #cadena, #illium {
     margin-top: 0px;
 }
 
@@ -53,7 +55,11 @@
     width: 816px;
     height: 50px;
     position: absolute;
-    bottom: 77px;
+    margin-top: auto;
+    margin-bottom: auto;
+    top: 0;
+    bottom: 0;
+    z-index: 0;
 }
 
 #left_btn {
@@ -62,12 +68,7 @@
     width: 40px;
     height: 50px;
     position: absolute;
-    left: 175px;
-    bottom: 0;
-}
-
-#left_btn:not(.no-hover):hover {
-    background-image: url('../image/job_select_win/left_btn_over.png');
+    left: 64px;
 }
 
 #right_btn {
@@ -76,10 +77,5 @@
     width: 40px;
     height: 50px;
     position: absolute;
-    right: 175px;
-    bottom: 0;
-}
-
-#right_btn:not(.no-hover):hover {
-    background-image: url('../image/job_select_win/right_btn_over.png');
+    right: 64px;
 }
