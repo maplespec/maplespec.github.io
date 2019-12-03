@@ -14,6 +14,12 @@ var disable_arrow_cursor = function() {
 var selected_job;
 
 $(document).ready(function() {
+    $("#right_btn").hover(function() {
+        $(this).css("background-image", job_img_path + "right_btn_over" + path_end);
+    }, function() {
+        $(this).css("background-image", job_img_path + "right_btn" + path_end);
+    });
+
     $("#right_btn").click(function() {
         $("#job_page_1").css("visibility", "hidden");
         $("#job_page_2").css("visibility", "visible");
