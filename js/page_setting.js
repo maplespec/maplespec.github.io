@@ -57,6 +57,8 @@ $(document).ready(function() {
         return false;
     });
 
+    $("#equip_arcane_win").css("display", "none");
+
     $(".item_img").css("animation", "item_over 0.65s infinite");
     $("[cursor*=button_over]").css("animation", "button_over 0.75s infinite");
 

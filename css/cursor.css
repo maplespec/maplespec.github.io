@@ -14,6 +14,10 @@ html:active, #window_title:active {
     cursor: auto;
 }
 
+#job_select_win_area, #job_select_win_area div {
+    cursor: url('../image/cursor/leaf.png') 0 20, auto;
+}
+
 @keyframes item_over {
     0% {
         cursor: url("../image/cursor/item_over_1.png") 5 5, auto;
