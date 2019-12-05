@@ -23,6 +23,18 @@
     right: 0;
 }
 
+#job_popup_area {
+    width: 740px;
+    height: 524px;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
 #job_table {
     width: 558px;
     height: 489px;
@@ -89,4 +101,110 @@
     height: 50px;
     position: absolute;
     right: 26px;
+}
+
+#job_select_popup {
+    background-image: url('../image/job_select_win/popup/bg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 214px;
+    height: 112px;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#xenon_select_popup {
+    background-image: url('../image/job_select_win/popup/bg_xenon.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 249px;
+    height: 142px;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#job_select_popup_title {
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 169px;
+    height: 38px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 10px;
+}
+
+#job_select_popup_btns {
+    position: absolute;
+    width: 122px;
+    height: 23px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    bottom: 12px;
+}
+
+#job_select_btn {
+    background-image: url('../image/job_select_win/popup/select_btn.png');
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 23px;
+    float: left;
+}
+
+#job_select_btn:hover {
+    background-image: url('../image/job_select_win/popup/select_btn_over.png');
+}
+
+#job_select_btn:active {
+    background-image: url('../image/job_select_win/popup/select_btn_click.png');
+}
+
+#job_cancel_btn {
+    background-image: url('../image/job_select_win/popup/cancel_btn.png');
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 23px;
+    margin-left: 22px;
+    float: left;
+}
+
+#job_cancel_btn:hover {
+    background-image: url('../image/job_select_win/popup/cancel_btn_over.png');
+}
+
+#job_cancel_btn:active {
+    background-image: url('../image/job_select_win/popup/cancel_btn_click.png');
+}
+
+#job_ok_btn {
+    background-image: url('../image/job_select_win/popup/ok_btn.png');
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 23px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    bottom: 12px;
+}
+
+#job_ok_btn:hover {
+    background-image: url('../image/job_select_win/popup/ok_btn_over.png');
+}
+
+#job_ok_btn:active {
+    background-image: url('../image/job_select_win/popup/ok_btn_click.png');
 }

@@ -50,6 +50,7 @@ var equip_slot_path = "url('image/equip_win/";
 var item_img_path = "url('image/equip_win/item_img/";
 var symbol_img_path = "url('image/arcane_win/";
 var job_img_path = "url('image/job_select_win/";
+var job_title_img_path = "url('image/job_select_win/popup/";
 var path_end = ".png')";
 
 $(document).ready(function() {

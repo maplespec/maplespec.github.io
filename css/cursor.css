@@ -14,7 +14,7 @@ html:active, #window_title:active {
     cursor: auto;
 }
 
-#job_select_win_area, #job_select_win_area div {
+#job_select_win_area, #job_select_win_area div, #job_popup_area, #job_popup_area div {
     cursor: url('../image/cursor/leaf.png') 0 20, auto;
 }
 

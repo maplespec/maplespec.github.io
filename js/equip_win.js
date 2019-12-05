@@ -22,10 +22,12 @@ var item_tooltip = function(e) {
                      "포켓 아이템", "벨트", "하의", "장갑", "망토",
                      "신발", "안드로이드", "하트"];
     var index = $(".item_img").index(this);
+    var img_name = $(".item_img").eq(index).attr("style"); // 내일 손 보기
+    console.log(img_name);
     var item_image = "image/equip_win/item_img/" + e.target.id + ".png";
     $("#item_info_item_name").text(item_name[index]);
     $("#equip_type_txt").text(item_name[index]);
-    $("#item_info_item_img").css("background-image", "url('" + item_image + "')");           
+    $("#item_info_item_img").css("background-image", "url('" + item_image + "')");
 }
 
 var item_tooltip_close = function() {
