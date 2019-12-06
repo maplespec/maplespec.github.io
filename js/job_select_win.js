@@ -70,9 +70,6 @@ $(document).ready(function() {
 
     $("#job_select_btn").click(function() {
         $("#job_select_win").css("display", "none");
-        if(selected_job == "aran") {
-            $(".item_img").eq(17).css("background-image", item_img_path + "poket_str" + path_end);            
-        }
         $("#equip_arcane_win").css("display", "block");
     });
 
@@ -82,5 +79,30 @@ $(document).ready(function() {
         $("#xenon_select_popup").css("display", "none");
     });
 
+    /*var item_img_exception = [1, 2, 13, 14, 16, 17, 19];
+        var item_img = $(".item_img").eq(i);
+        if (item_img_exception.indexOf(i) != -1) {
+            continue;
+        }*/
+    // 엠블, 모자+상의+하의, 무기, 보조, 포켓
+    setInterval(function() {
+        // 엠블렘
+        var adventurer_warrior = ["hero", "paladin", "darknight"];
+        var adventurer_magician = ["bishop", "arch_mage_fire", "arch_mage_ice"];
+        var adventurer_bowman = ["bow_master", "marksman", "pathfinder"];
+        var adventurer_thief = ["night_lord", "shadower", "dual_blade"];
+        var adventurer_pirate = ["captain", "viper", "cannon_shooter"];
+        var cygnus = ["mikhail", "soul_master", "flame_wizard", "wind_breaker", "night_walker", "striker"];
+        var hero = ["aran", "luminous", "evan", "mercedes", "phantom", "eunwol"];
+        var resistance = ["blaster", "battlemage", "wild_hunter", "mechanic"];
+        var demon = ["demon_slayer", "demon_avenger"];
+        var nova = ["kaiser", "cadena", "angelic_burster"];
+        var lef = ["illium", "ark"];
+        //"zero", "kinesis", "ho_young"은 따로 / "xenon"은 미지원
+        
+        if(selected_job == "aran") {
+            $(".item_img").eq(17).css("background-image", item_img_path + "poket_str" + path_end);
+        }
+    }, 10);
 
 });

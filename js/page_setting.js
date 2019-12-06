@@ -105,7 +105,11 @@ $(document).ready(function() {
     }
 
     for(var i = 0; i < 25; i++) {
+        var item_img_exception = [1, 2, 13, 14, 16, 17, 19];
         var item_img = $(".item_img").eq(i);
+        if(item_img_exception.indexOf(i) != -1) {
+            continue;
+        }
         item_img.css("background-image", item_img_path + item_img.attr("id") + path_end);
     }
 
