@@ -94,7 +94,7 @@ $(document).ready(function() {
         var demon = ["demon"]; // "demon_avenger"은 아직 미지원, 지원 전까지 "demon_slyaer" = "demon"
         var nova = ["kaiser", "cadena", "angelic_burster"];
         var lef = ["illium", "ark"];
-        //"zero", "kinesis", "ho_young"은 따로 / "xenon"은 아직 미지원
+        //"zero", "kinesis", "ho_young" / "xenon"은 아직 미지원
 
         var emblem_adventurer = adventurer_warrior.concat(adventurer_magician, adventurer_bowman, adventurer_thief, adventurer_pirate);
         var armor_warrior = adventurer_warrior.concat(cygnus[0], cygnus[1], hero[0], resistance[0], demon[0], nova[0], "zero");
@@ -109,7 +109,45 @@ $(document).ready(function() {
         var poket_int = adventurer_magician.concat(cygnus[2], hero[1], hero[2], resistance[1], lef[0], "kinesis");
         var poket_luk = adventurer_thief.concat(cygnus[4], hero[4], nova[1], "ho_young");
 
+        // 무기, 보조
 
+        if(emblem_adventurer.indexOf(selected_job) != -1) {
+            emblem_img.css("background-image", item_img_path + "emblem_adventurer" + path_end);
+        } else if(cygnus.indexOf(selected_job) != -1) {
+            emblem_img.css("background-image", item_img_path + "emblem_cygnus" + path_end);
+        } else if(resistance.indexOf(selected_job) != -1) {
+            emblem_img.css("background-image", item_img_path + "emblem_resistance" + path_end);
+        } else if(demon.indexOf(selected_job) != -1) {
+            emblem_img.css("background-image", item_img_path + "emblem_demon" + path_end);
+        } else if(selected_job == "aran") {
+            emblem_img.css("background-image", item_img_path + "emblem_aran" + path_end);
+        } else if(selected_job == "luminous") {
+            emblem_img.css("background-image", item_img_path + "emblem_luminous" + path_end);
+        } else if(selected_job == "evan") {
+            emblem_img.css("background-image", item_img_path + "emblem_evan" + path_end);
+        } else if(selected_job == "mercedes") {
+            emblem_img.css("background-image", item_img_path + "emblem_mercedes" + path_end);
+        } else if(selected_job == "phantom") {
+            emblem_img.css("background-image", item_img_path + "emblem_phantom" + path_end);
+        } else if(selected_job == "eunwol") {
+            emblem_img.css("background-image", item_img_path + "emblem_eunwol" + path_end);
+        } else if(selected_job == "kaiser") {
+            emblem_img.css("background-image", item_img_path + "emblem_kaiser" + path_end);
+        } else if(selected_job == "cadena") {
+            emblem_img.css("background-image", item_img_path + "emblem_cadena" + path_end);
+        } else if(selected_job == "angelic_burster") {
+            emblem_img.css("background-image", item_img_path + "emblem_angelic_burster" + path_end);
+        } else if(selected_job == "illium") {
+            emblem_img.css("background-image", item_img_path + "emblem_illium" + path_end);
+        } else if(selected_job == "ark") {
+            emblem_img.css("background-image", item_img_path + "emblem_ark" + path_end);
+        } else if(selected_job == "zero") {
+            emblem_img.css("background-image", item_img_path + "emblem_zero" + path_end);
+        } else if(selected_job == "kinesis") {
+            emblem_img.css("background-image", item_img_path + "emblem_kinesis" + path_end);
+        } else if(selected_job == "ho_young") {
+            emblem_img.css("background-image", item_img_path + "emblem_ho_young" + path_end);
+        } 
 
         if(armor_warrior.indexOf(selected_job) != -1) {
             cap_img.css("background-image", item_img_path + "warrior_cap" + path_end);

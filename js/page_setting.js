@@ -113,6 +113,12 @@ $(document).ready(function() {
         item_img.css("background-image", item_img_path + item_img.attr("id") + path_end);
     }
 
+    for(var i = 0; i < 25; i++) {
+        var item_id = $(".item_img").eq(i).attr("id");
+        var item_pop = $(".item_pot").eq(i);
+        item_pop.attr("id", item_id + "_pot");
+    }
+
     for(var i = 0; i < 6; i++) {
         var symbol_img = $(".symbol_img").eq(i);
         symbol_img.css("background-image", symbol_img_path + symbol_img.attr("id").replace("_img","") + path_end);
