@@ -70,15 +70,15 @@
 }
 
 #arc_num_1 {
-    background-image: url('../image/arcane_win/1.png');
+    display: none;
 }
 
 #arc_num_2 {
-    background-image: url('../image/arcane_win/0.png');
+    display: none;
 }
 
 #arc_num_3 {
-    background-image: url('../image/arcane_win/2.png');
+    display: none;
 }
 
 #arc_num_4 {
@@ -95,19 +95,19 @@
 }
 
 #stat_num_1 {
-    background-image: url('../image/arcane_win/1.png');
+    display: none;
 }
 
 #stat_num_2 {
-    background-image: url('../image/arcane_win/0.png');
+    display: none;
 }
 
 #stat_num_3 {
-    background-image: url('../image/arcane_win/2.png');
+    display: none;
 }
 
 #stat_num_4 {
-    background-image: url('../image/arcane_win/0.png');
+    display: none;
 }
 
 #stat_num_5 {
@@ -189,7 +189,6 @@
 }
 
 .symbol_level_num_1 {
-    background-image: url('../image/arcane_win/lv_1.png');
     background-repeat: no-repeat;
     width: 5px;
     height: 10px;
@@ -197,7 +196,7 @@
 }
 
 .symbol_level_num_2 {
-    background-image: url('../image/arcane_win/lv_5.png');
+    background-image: url('../image/arcane_win/lv_0.png');
     background-repeat: no-repeat;
     width: 8px;
     height: 10px;

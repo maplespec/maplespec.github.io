@@ -3,8 +3,6 @@ var item_tooltip = function(e) {
     var y = e.clientY - 5;
     var width = 261;
     var height = $("#item_info_bg").height();
-    var left = $("#item_info_bg").offset().left;
-    var top = $("#item_info_bg").offset().top;
     $("#item_info_bg").css("display", "block");
     if (x > 1366 - width) {
         x = 1366 - width;
