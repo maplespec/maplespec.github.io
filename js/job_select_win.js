@@ -57,6 +57,12 @@ $(document).ready(function() {
         if(selected_job == "xenon") {
             $("#job_popup_area").css("display", "block");
             $("#xenon_select_popup").css("display", "block");
+        } else if(selected_job == "adventurer") {
+            //
+        } else if(selected_job == "cygnus") {
+            //
+        } else if(selected_job == "resistance") {
+            //
         } else {
             $("#job_popup_area").css("display", "block");
             $("#job_select_popup").css("display", "block");
