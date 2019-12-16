@@ -208,3 +208,7 @@
 #job_ok_btn:active {
     background-image: url('../image/job_select_win/popup/ok_btn_click.png');
 }
+
+option[value=""][disabled] {
+    display: none;
+}

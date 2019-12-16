@@ -14,6 +14,11 @@ var disable_arrow_cursor = function() {
 var selected_job;
 
 $(document).ready(function() {
+    /*$("#adventurer_dropdown").select2({
+        placeholder: "직업을 선택하세요.",
+        minimumResultsForSearch: Infinity
+    });*/
+
     $("#job_popup_area").css("display", "none");
     $("#job_select_popup").css("display", "none");
     $("#xenon_select_popup").css("display", "none");
