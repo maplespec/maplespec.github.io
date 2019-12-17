@@ -54,10 +54,8 @@
     <link href="css/arcane_win.css" rel="stylesheet">
     <link href="css/item_info_win.css" rel="stylesheet">
     <link href="css/job_select_win.css" rel="stylesheet">
-    <link href="css/select2.min.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="js/select2.min.js"></script>
     <script src="js/page_setting.js"></script>
     <script src="js/equip_win.js"></script>
     <script src="js/arcane_win.js"></script>
@@ -123,17 +121,32 @@
                 </div>
             </div>
             <div id="xenon_select_popup">
-                <div id="job_ok_btn"></div>
+                <div id="xenon_ok_btn"></div>
             </div>
             <div id="adventurer_select_popup">
-                <select id="adventurer_dropdown">
-                    <option value="" disabled selected>직업을 선택하세요.</option>
-                    <optgroup label="전사">
-                        <option value="hero">히어로</option>
-                        <option value="paladin">팔라딘</option>
-                        <option value="darknight">다크나이트</option>
-                    </optgroup>
-                </select>
+                <div id="adventurer_class_img"></div>
+                <div id="adventurer_selectbox">
+                    <select id="adventurer_job_class">
+                        <option value="hide">-직업군-</option>
+                        <option value="warrior">전사</option>
+                        <option value="magician">마법사</option>
+                        <option value="bowman">궁수</option>
+                        <option value="thief">도적</option>
+                        <option value="pirate">해적</option>
+                    </select>
+                    <div id="adventurer_selectbox_warrior">
+                        <select id="adventurer_warrior">
+                            <option value="hide">-직업-</option>
+                            <option value="hero">히어로</option>
+                            <option value="paladin">팔라딘</option>
+                            <option value="darknight">다크나이트</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="adventurer_select_popup_btns">
+                    <div id="adventurer_select_btn"></div>
+                    <div id="adventurer_cancel_btn"></div>
+                </div>
             </div>
         </div>
     </div>

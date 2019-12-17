@@ -163,11 +163,11 @@
     float: left;
 }
 
-#job_select_btn:hover {
+#job_select_btn:hover, #adventurer_select_btn:hover {
     background-image: url('../image/job_select_win/popup/select_btn_over.png');
 }
 
-#job_select_btn:active {
+#job_select_btn:active, #adventurer_select_btn:active {
     background-image: url('../image/job_select_win/popup/select_btn_click.png');
 }
 
@@ -180,15 +180,15 @@
     float: left;
 }
 
-#job_cancel_btn:hover {
+#job_cancel_btn:hover, #adventurer_cancel_btn:hover {
     background-image: url('../image/job_select_win/popup/cancel_btn_over.png');
 }
 
-#job_cancel_btn:active {
+#job_cancel_btn:active, #adventurer_cancel_btn:active {
     background-image: url('../image/job_select_win/popup/cancel_btn_click.png');
 }
 
-#job_ok_btn {
+#xenon_ok_btn {
     background-image: url('../image/job_select_win/popup/ok_btn.png');
     background-repeat: no-repeat;
     width: 50px;
@@ -201,14 +201,156 @@
     bottom: 12px;
 }
 
-#job_ok_btn:hover {
+#xenon_ok_btn:hover {
     background-image: url('../image/job_select_win/popup/ok_btn_over.png');
 }
 
-#job_ok_btn:active {
+#xenon_ok_btn:active {
     background-image: url('../image/job_select_win/popup/ok_btn_click.png');
 }
 
-option[value=""][disabled] {
+#adventurer_select_popup {
+    background-image: url('../image/job_select_win/popup/bg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 214px;
+    height: 112px;
+    position: absolute;
+    /*margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;*/
+}
+
+#adventurer_class_img {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 74px;
+    height: 86px;
+    background: white;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+#adventurer_selectbox {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+}
+
+#adventurer_select_popup_btns {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+}
+
+#adventurer_select_btn {
+    background-image: url('../image/job_select_win/popup/select_btn.png');
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 23px;
+    float: left;
+}
+
+#adventurer_cancel_btn {
+    background-image: url('../image/job_select_win/popup/cancel_btn.png');
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 23px;
+    margin-left: 5px;
+    float: left;
+}
+
+#adventurer_selectbox_warrior {
+    margin-top: 5px;
+}
+
+.select-hidden {
+    display: none;
+    visibility: hidden;
+    padding-right: 10px;
+}
+
+.select {
+    cursor: url('../image/cursor/leaf.png') 0 20, auto;
+    position: relative;
+    font-size: 8.6pt;
+    color: #ffffff;
+    width: 105px;
+    height: 23px;
+}
+
+.select-styled {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #c0392b;
+    border: 1px solid black;
+    border-radius: 3px;
+    padding-left: 5px;
+    text-align: left;
+    line-height: 18px;
+}
+
+.select-styled:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border: 4px solid transparent;
+    border-color: #ffffff transparent transparent;
+    position: absolute;
+    top: 8px;
+    right: 4px;
+}
+
+.select-styled:hover {
+    background-color: #c0392b;
+}
+
+.select-styled:active, .select-styled.active {
+    background-color: #c0392b;
+}
+
+.select-styled:active:after, .select-styled.active:after {
+    top: 4px;
+    border-color: transparent transparent #ffffff;
+}
+
+.select-options {
+    display: none; 
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    z-index: 999;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.select-options li {
+    cursor: url('../image/cursor/leaf.png') 0 20, auto;
+    margin: 0;
+    height: 20px;
+    background: #ffffff;
+    color: black;
+    border: 1px solid black;
+    border-radius: 3px;
+    border-top: none;
+    text-align: left;
+    padding-left: 5px;
+    line-height: 20px;
+}
+
+.select-options li:hover {
+    color: #c0392b;
+    background: yellow;
+}
+
+.select-options li[rel="hide"] {
     display: none;
 }
