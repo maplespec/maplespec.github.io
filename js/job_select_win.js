@@ -42,7 +42,7 @@ $(document).ready(function() {
             $('div.select-styled.active').not(this).each(function(){
                 $(this).removeClass('active').next('ul.select-options').hide();
             });
-            $(this).toggleClass('active').next('ul.select-options').toggle();
+             $(this).toggleClass('active').next('ul.select-options').toggle();           
         });
       
         $listItems.click(function(e) {
@@ -50,19 +50,65 @@ $(document).ready(function() {
             $styledSelect.text($(this).text()).removeClass('active');
             $this.val($(this).attr('rel'));
             $list.hide();
-            console.log($this.val());
+            selected_job = $this.val();
+
+            switch(selected_job) {
+                case "warrior":
+                    $("#adventurer_selectbox_warrior").css("display", "block");
+                    $("#adventurer_selectbox_magician").css("display", "none");
+                    $("#adventurer_selectbox_bowman").css("display", "none");
+                    $("#adventurer_selectbox_thief").css("display", "none");
+                    $("#adventurer_selectbox_pirate").css("display", "none");
+                    break;
+                case "magician":
+                    $("#adventurer_selectbox_warrior").css("display", "none");
+                    $("#adventurer_selectbox_magician").css("display", "block");
+                    $("#adventurer_selectbox_bowman").css("display", "none");
+                    $("#adventurer_selectbox_thief").css("display", "none");
+                    $("#adventurer_selectbox_pirate").css("display", "none");
+                    break;
+                case "bowman":
+                    $("#adventurer_selectbox_warrior").css("display", "none");
+                    $("#adventurer_selectbox_magician").css("display", "none");
+                    $("#adventurer_selectbox_bowman").css("display", "block");
+                    $("#adventurer_selectbox_thief").css("display", "none");
+                    $("#adventurer_selectbox_pirate").css("display", "none");
+                    break;
+                case "thief":
+                    $("#adventurer_selectbox_warrior").css("display", "none");
+                    $("#adventurer_selectbox_magician").css("display", "none");
+                    $("#adventurer_selectbox_bowman").css("display", "none");
+                    $("#adventurer_selectbox_thief").css("display", "block");
+                    $("#adventurer_selectbox_pirate").css("display", "none");
+                    break;
+                case "pirate":
+                    $("#adventurer_selectbox_warrior").css("display", "none");
+                    $("#adventurer_selectbox_magician").css("display", "none");
+                    $("#adventurer_selectbox_bowman").css("display", "none");
+                    $("#adventurer_selectbox_thief").css("display", "none");
+                    $("#adventurer_selectbox_pirate").css("display", "block");
+                    break;
+            }
         });
       
         $(document).click(function() {
             $styledSelect.removeClass('active');
             $list.hide();
         });
+
+        $("#adventurer_cancel_btn").click(function() {
+            $styledSelect.text($this.children('option').eq(0).text());
+        });
     
     });
+
+    
 
     $("#job_popup_area").css("display", "none");
     $("#job_select_popup").css("display", "none");
     $("#xenon_select_popup").css("display", "none");
+    $("#adventurer_select_popup").css("display", "none");
+
     $("#left_btn").css("animation", "none");
 
     $("#right_btn").hover(function() {
@@ -104,7 +150,9 @@ $(document).ready(function() {
             $("#job_popup_area").css("display", "block");
             $("#xenon_select_popup").css("display", "block");
         } else if(selected_job == "adventurer") {
-            //
+            $("#job_select_popup_title").css("background-image", job_title_img_path + "adventurer" + path_end);
+            $("#job_popup_area").css("display", "block");
+            $("#adventurer_select_popup").css("display", "block");
         } else if(selected_job == "cygnus") {
             //
         } else if(selected_job == "resistance") {
@@ -120,13 +168,35 @@ $(document).ready(function() {
         $("#equip_arcane_win").css("display", "block");
     });
 
+    
+    $("#adventurer_select_btn").click(function() {
+        var adventurer_exception = ["adventurer", "warrior", "magician", "bowman", "thief", "pirate"];
+        if(adventurer_exception.indexOf(selected_job) != -1) {
+            console.log("Exception error");
+        } else {
+            $("#job_popup_area").css("display", "block");
+            $("#job_select_popup").css("display", "block");
+        }
+    });
+
     $("#job_cancel_btn, #xenon_ok_btn").click(function() {
+        if($("#adventurer_select_popup").css("display") == "block") {
+            $("#job_select_popup").css("display", "none");
+        } else {
+            $("#job_popup_area").css("display", "none");
+            $("#job_select_popup").css("display", "none");
+            $("#xenon_select_popup").css("display", "none");
+        }
+    });
+
+    $("#adventurer_cancel_btn").click(function() {
         $("#job_popup_area").css("display", "none");
-        $("#job_select_popup").css("display", "none");
-        $("#xenon_select_popup").css("display", "none");
+        $("#adventurer_select_popup").css("display", "none");
+        $(".hide_selectbox").css("display", "none");
     });
 
     setInterval(function() {
+
         var cap_img = $(".item_img").eq(1);
         var emblem_img = $(".item_img").eq(2);
         var weapon_img = $(".item_img").eq(13);
@@ -135,7 +205,7 @@ $(document).ready(function() {
         var poket_img = $(".item_img").eq(17);
         var pants_img = $(".item_img").eq(19);
         
-        var adventurer_warrior = ["hero", "paladin", "darknight"];
+        var adventurer_warrior = ["hero", "paladin", "dark_night"];
         var adventurer_magician = ["bishop", "arch_mage_fire", "arch_mage_ice"];
         var adventurer_bowman = ["bow_master", "marksman", "pathfinder"];
         var adventurer_thief = ["night_lord", "shadower", "dual_blade"];
