@@ -120,11 +120,10 @@ var set_equip_img = function() {
 }
 
 var selected_job;
+var isJobSelected;
 
 $(document).ready(function() {
     
-
-
     $('select').each(function(){
         var $this = $(this), numberOfOptions = $(this).children('option').length;
       
@@ -162,32 +161,38 @@ $(document).ready(function() {
             $this.val($(this).attr('rel'));
             $list.hide();
             selected_job = $this.val();
+            isJobSelected = true;
 
             switch(selected_job) {
                 case "warrior":
                     $(".hide_selectbox").css("display", "none");
                     $("#adventurer_selectbox_warrior").css("display", "block");
                     $(".select-styled").eq(1).text("-직업-");
+                    isJobSelected = false;
                     break;
                 case "magician":
                     $(".hide_selectbox").css("display", "none");
                     $("#adventurer_selectbox_magician").css("display", "block");
                     $(".select-styled").eq(2).text("-직업-");
+                    isJobSelected = false;
                     break;
                 case "bowman":
                     $(".hide_selectbox").css("display", "none");
                     $("#adventurer_selectbox_bowman").css("display", "block");
                     $(".select-styled").eq(3).text("-직업-");
+                    isJobSelected = false;
                     break;
                 case "thief":
                     $(".hide_selectbox").css("display", "none");
                     $("#adventurer_selectbox_thief").css("display", "block");
                     $(".select-styled").eq(4).text("-직업-");
+                    isJobSelected = false;
                     break;
                 case "pirate":
                     $(".hide_selectbox").css("display", "none");
                     $("#adventurer_selectbox_pirate").css("display", "block");
                     $(".select-styled").eq(5).text("-직업-");
+                    isJobSelected = false;
                     break;
             }
         });
@@ -267,15 +272,15 @@ $(document).ready(function() {
         $("#job_select_win").css("display", "none");
         $("#equip_arcane_win").css("display", "block");
     });
-
     
     $("#adventurer_select_btn").click(function() {
-        var adventurer_exception = ["adventurer", "warrior", "magician", "bowman", "thief", "pirate"];
-        if(adventurer_exception.indexOf(selected_job) != -1) {
-            alert("직업군과 직업을 선택해주세요.");
-        } else {
+        if(isJobSelected == true) {
             $("#job_popup_area").css("display", "block");
             $("#job_select_popup").css("display", "block");
+        } else if(isJobSelected == false) {
+            alert("직업을 선택해주세요.");
+        } else {
+            alert("직업군을 선택해주세요.");
         }
     });
 
