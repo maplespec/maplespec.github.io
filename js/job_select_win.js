@@ -157,7 +157,13 @@ $(document).ready(function() {
       
         $listItems.click(function(e) {
             e.stopPropagation();
-            $styledSelect.text($(this).text()).removeClass('active');
+            if($(this).text() == "아크메이지(불,독)") {
+                $styledSelect.text("아크메이지(불...").removeClass('active');
+            } else if($(this).text() == "아크메이지(썬,콜)") {
+                $styledSelect.text("아크메이지(썬...").removeClass('active');
+            } else {
+                $styledSelect.text($(this).text()).removeClass('active');
+            }
             $this.val($(this).attr('rel'));
             $list.hide();
             selected_job = $this.val();
@@ -167,31 +173,31 @@ $(document).ready(function() {
                 case "warrior":
                     $(".hide_selectbox").css("display", "none");
                     $("#adventurer_selectbox_warrior").css("display", "block");
-                    $(".select-styled").eq(1).text("-직업-");
+                    $(".select-styled").eq(1).text("- 직업 -");
                     isJobSelected = false;
                     break;
                 case "magician":
                     $(".hide_selectbox").css("display", "none");
                     $("#adventurer_selectbox_magician").css("display", "block");
-                    $(".select-styled").eq(2).text("-직업-");
+                    $(".select-styled").eq(2).text("- 직업 -");
                     isJobSelected = false;
                     break;
                 case "bowman":
                     $(".hide_selectbox").css("display", "none");
                     $("#adventurer_selectbox_bowman").css("display", "block");
-                    $(".select-styled").eq(3).text("-직업-");
+                    $(".select-styled").eq(3).text("- 직업 -");
                     isJobSelected = false;
                     break;
                 case "thief":
                     $(".hide_selectbox").css("display", "none");
                     $("#adventurer_selectbox_thief").css("display", "block");
-                    $(".select-styled").eq(4).text("-직업-");
+                    $(".select-styled").eq(4).text("- 직업 -");
                     isJobSelected = false;
                     break;
                 case "pirate":
                     $(".hide_selectbox").css("display", "none");
                     $("#adventurer_selectbox_pirate").css("display", "block");
-                    $(".select-styled").eq(5).text("-직업-");
+                    $(".select-styled").eq(5).text("- 직업 -");
                     isJobSelected = false;
                     break;
             }
