@@ -164,11 +164,11 @@
     float: left;
 }
 
-#job_select_btn:hover, #adventurer_select_btn:hover {
+#job_select_btn:hover, .etc_select_btn:hover, #adventurer_select_btn:hover {
     background-image: url('../image/job_select_win/popup/select_btn_over.png');
 }
 
-#job_select_btn:active, #adventurer_select_btn:active {
+#job_select_btn:active, .etc_select_btn:active, #adventurer_select_btn:active {
     background-image: url('../image/job_select_win/popup/select_btn_click.png');
 }
 
@@ -181,11 +181,11 @@
     float: left;
 }
 
-#job_cancel_btn:hover, #adventurer_cancel_btn:hover {
+#job_cancel_btn:hover, .etc_cancel_btn:hover {
     background-image: url('../image/job_select_win/popup/cancel_btn_over.png');
 }
 
-#job_cancel_btn:active, #adventurer_cancel_btn:active {
+#job_cancel_btn:active, .etc_cancel_btn:activef {
     background-image: url('../image/job_select_win/popup/cancel_btn_click.png');
 }
 
@@ -219,9 +219,9 @@
 .select {
     cursor: url('../image/cursor/leaf.png') 0 20, auto;
     position: relative;
-    font-size: 8.6pt;
-    color: #ffffff;
-    width: 105px;
+    font-size: 9pt;
+    color: rgb(102, 68, 34);
+    width: 110px;
     height: 23px;
 }
 
@@ -231,10 +231,10 @@
     bottom: 0;
     left: 0;
     right: 0;
-    /*background-color: #c0392b;*/
-    background-image: url('../image/job_select_win/popup/selectbox_bg.png');
+    background-color: rgb(222, 197, 165);
+    border: 1px solid rgb(188, 141, 104);
     border-radius: 4px;
-    padding-left: 6px;
+    padding-left: 5px;
     text-align: left;
     line-height: 23px;
 }
@@ -244,23 +244,23 @@
     width: 0;
     height: 0;
     border: 4px solid transparent;
-    border-color: #ffffff transparent transparent;
+    border-color: rgb(102, 68, 34) transparent transparent;
     position: absolute;
     top: 9px;
     right: 5px;
 }
-
+/*
 .select-styled:hover {
-    background-color: #c0392b;
+    background-color: rgb(188, 141, 104);
 }
 
 .select-styled:active, .select-styled.active {
-    background-color: #c0392b;
-}
+    background-color: rgb(188, 141, 104);
+}*/
 
 .select-styled:active:after, .select-styled.active:after {
     top: 5px;
-    border-color: transparent transparent #ffffff;
+    border-color: transparent transparent rgb(102, 68, 34);
 }
 
 .select-options {
@@ -280,36 +280,36 @@
     margin: 0;
     height: 23px;
     background: #ffffff;
-    color: #c0392b;
-    border-left: 1px solid #c0392b;
-    border-right: 1px solid #c0392b;
+    color: rgb(102, 68, 34);
+    border-left: 1px solid rgb(188, 141, 104);
+    border-right: 1px solid rgb(188, 141, 104);
     text-align: left;
-    padding-left: 6px;
-    line-height: 23px;
+    padding-left: 5px;
+    line-height: 25px;
 }
 
 .select-options li:nth-child(2) {
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
-    border-top: 1px solid #c0392b;
+    border-top: 0px solid rgb(188, 141, 104);
 }
 
 .select-options li:last-child {
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
-    border-bottom: 1px solid #c0392b;
+    border-bottom: 1px solid rgb(188, 141, 104);
 }
 
 .select-options li:hover {
-    color: #c0392b;
-    background: yellow;
+    color: white;
+    background: rgb(188, 141, 104);
 }
 
 .select-options li[rel="hide"] {
     display: none;
 }
 
-#adventurer_select_popup {
+#adventurer_select_popup, #cygnus_select_popup, #resistance_select_popup {
     background-image: url('../image/job_select_win/popup/bg_class.png');
     background-repeat: no-repeat;
     background-position: center;
@@ -321,32 +321,35 @@
     bottom: 0;
     left: 0;
     right: 0;
+    display: none;
 }
 
 #adventurer_class_img {
     position: absolute;
     top: 12px;
     left: 12px;
-    width: 76px;
-    height: 88px;
+    width: 69px;
+    height: 87px;
     background: white;
     object-fit: cover;
     border-radius: 4px;
+    border: 1px solid rgb(188, 141, 104);
+    cursor: url('../image/cursor/leaf.png') 0 20, auto;
 }
 
-#adventurer_selectbox {
+.etc_selectbox {
     position: absolute;
     top: 12px;
     right: 12px;
 }
 
-#adventurer_select_popup_btns {
+.etc_select_popup_btns {
     position: absolute;
     bottom: 12px;
     right: 12px;
 }
 
-#adventurer_select_btn {
+.etc_select_btn, #adventurer_select_btn {
     background-image: url('../image/job_select_win/popup/select_btn.png');
     background-repeat: no-repeat;
     width: 50px;
@@ -354,16 +357,59 @@
     float: left;
 }
 
-#adventurer_cancel_btn {
+.etc_cancel_btn {
     background-image: url('../image/job_select_win/popup/cancel_btn.png');
     background-repeat: no-repeat;
     width: 50px;
     height: 23px;
-    margin-left: 5px;
+    margin-left: 10px;
     float: left;
 }
 
 #adventurer_selectbox_warrior, #adventurer_selectbox_magician, #adventurer_selectbox_bowman, #adventurer_selectbox_thief, #adventurer_selectbox_pirate {
     margin-top: 9px;
     display: none;
+}
+
+.select_disabled {
+    font-size: 9pt;
+    color: rgb(102, 68, 34);
+    width: 103px;
+    height: 21px;
+    background-color: rgb(222, 197, 165);
+    border: 1px solid rgb(188, 141, 104);
+    border-radius: 4px;
+    padding-left: 5px;
+    text-align: left;
+    line-height: 23px;
+}
+
+#cygnus_selectbox, #resistance_selectbox {
+    margin-top: 9px;
+}
+
+#cygnus_class_img {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 69px;
+    height: 87px;
+    background: white;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid rgb(188, 141, 104);
+    cursor: url('../image/cursor/leaf.png') 0 20, auto;
+}
+
+#resistance_class_img {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 69px;
+    height: 87px;
+    background: white;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid rgb(188, 141, 104);
+    cursor: url('../image/cursor/leaf.png') 0 20, auto;
 }

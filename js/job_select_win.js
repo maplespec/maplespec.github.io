@@ -27,7 +27,7 @@ var set_equip_img = function() {
     var adventurer_pirate = ["captain", "viper", "cannon_shooter"];
     var cygnus = ["mikhail", "soul_master", "flame_wizard", "wind_breaker", "night_walker", "striker"];
     var hero = ["aran", "luminous", "evan", "mercedes", "phantom", "eunwol"];
-    var resistance = ["blaster", "battlemage", "wild_hunter", "mechanic"];
+    var resistance = ["blaster", "battle_mage", "wild_hunter", "mechanic"];
     var demon = ["demon"]; // "demon_avenger"은 아직 미지원, 지원 전까지 "demon_slyaer" = "demon"
     var nova = ["kaiser", "cadena", "angelic_burster"];
     var lef = ["illium", "ark"];
@@ -158,9 +158,9 @@ $(document).ready(function() {
         $listItems.click(function(e) {
             e.stopPropagation();
             if($(this).text() == "아크메이지(불,독)") {
-                $styledSelect.text("아크메이지(불...").removeClass('active');
+                $styledSelect.text("아크메이지(불..").removeClass('active');
             } else if($(this).text() == "아크메이지(썬,콜)") {
-                $styledSelect.text("아크메이지(썬...").removeClass('active');
+                $styledSelect.text("아크메이지(썬..").removeClass('active');
             } else {
                 $styledSelect.text($(this).text()).removeClass('active');
             }
@@ -200,6 +200,25 @@ $(document).ready(function() {
                     $(".select-styled").eq(5).text("- 직업 -");
                     isJobSelected = false;
                     break;
+                case "soul_master":
+                case "blaster":
+                    $(".select_disabled").text("전사");
+                    break;
+                case "flame_wizard":
+                case "battle_mage":
+                    $(".select_disabled").text("마법사");
+                    break;
+                case "wind_breaker":
+                case "wild_hunter":
+                    $(".select_disabled").text("궁수");
+                    break;
+                case "night_walker":
+                    $(".select_disabled").text("도적");
+                    break;
+                case "striker":
+                case "mechanic":
+                    $(".select_disabled").text("해적");
+                    break;
             }
         });
       
@@ -208,7 +227,7 @@ $(document).ready(function() {
             $list.hide();
         });
 
-        $("#adventurer_cancel_btn").click(function() {
+        $(".etc_cancel_btn").click(function() {
             $styledSelect.text($this.children('option').eq(0).text());
         });
     
@@ -217,7 +236,6 @@ $(document).ready(function() {
     $("#job_popup_area").css("display", "none");
     $("#job_select_popup").css("display", "none");
     $("#xenon_select_popup").css("display", "none");
-    $("#adventurer_select_popup").css("display", "none");
 
     $("#left_btn").css("animation", "none");
 
@@ -264,9 +282,13 @@ $(document).ready(function() {
             $("#job_popup_area").css("display", "block");
             $("#adventurer_select_popup").css("display", "block");
         } else if(selected_job == "cygnus") {
-            //
+            $("#job_select_popup_title").css("background-image", job_title_img_path + "cygnus" + path_end);
+            $("#job_popup_area").css("display", "block");
+            $("#cygnus_select_popup").css("display", "block");
         } else if(selected_job == "resistance") {
-            //
+            $("#job_select_popup_title").css("background-image", job_title_img_path + "resistance" + path_end);
+            $("#job_popup_area").css("display", "block");
+            $("#resistance_select_popup").css("display", "block");
         } else {
             $("#job_popup_area").css("display", "block");
             $("#job_select_popup").css("display", "block");
@@ -290,19 +312,27 @@ $(document).ready(function() {
         }
     });
 
+    $(".etc_select_btn").click(function() {
+        if(isJobSelected == true) {
+            $("#job_popup_area").css("display", "block");
+            $("#job_select_popup").css("display", "block");
+        } else {
+            alert("직업을 선택해주세요.");
+        }
+    });
+
     $("#job_cancel_btn, #xenon_ok_btn").click(function() {
-        if($("#adventurer_select_popup").css("display") == "block") {
+        if($(".etc_select_popup").css("display") == "block") {
             $("#job_select_popup").css("display", "none");
         } else {
-            $("#job_popup_area").css("display", "none");
             $("#job_select_popup").css("display", "none");
             $("#xenon_select_popup").css("display", "none");
         }
     });
 
-    $("#adventurer_cancel_btn").click(function() {
+    $(".etc_cancel_btn").click(function() {
         $("#job_popup_area").css("display", "none");
-        $("#adventurer_select_popup").css("display", "none");
+        $(".etc_select_popup").css("display", "none");
         $(".hide_selectbox").css("display", "none");
     });
 
