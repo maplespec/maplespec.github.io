@@ -19,6 +19,7 @@ var set_equip_img = function() {
     var sub_weapon_img = $(".item_img").eq(16);
     var poket_img = $(".item_img").eq(17);
     var pants_img = $(".item_img").eq(19);
+    var arcane_stat_txt_img = $("#stat_txt");
     
     var adventurer_warrior = ["hero", "paladin", "dark_night"];
     var adventurer_magician = ["bishop", "arch_mage_fire", "arch_mage_ice"];
@@ -47,6 +48,37 @@ var set_equip_img = function() {
     var poket_luk = adventurer_thief.concat(cygnus[4], hero[4], nova[1], "ho_young");
 
     // 무기, 보조
+    /*
+    히어로 : 한손검, 한손도끼, 두손검, 두손도끼
+    팔라딘 : 한손검, 한손둔기, 두손검, 두손둔기
+    다크나이트 : 창, 폴암
+    비숍, 불독, 썬콜, 플레임위자드, 에반 : 스태프, 완드
+    보우마스터, 윈드브레이커 : 활
+    신궁, 와일드헌터 : 석궁
+    패스파인더 : 에인션트보우
+    나이트로드, 나이트워커 : 아대
+    섀도어, 듀얼블레이드 : 단검
+    캡틴, 메카닉 : 건
+    바이퍼, 스트라이커, 은월, 아크 : 너클
+    캐논슈터 : 핸드캐논
+    미하일 : 한손검
+    소울마스터 : 한손검, 두손검
+    아란 : 폴암
+    루미너스 : 샤이닝로드
+    메르세데스 : 듀얼보우건
+    팬텀 : 케인
+    블래스터 : 건틀렛리볼버
+    데몬어벤져 : 데스페라도
+    데몬슬레이어 : 한손도끼, 한손둔기
+    배틀메이지 : 스태프
+    카이저 : 두손검
+    엔젤릭버스터 : 소울슈터
+    카데나 : 체인
+    일리움 : 매직건틀렛
+    키네시스 : ESP리미터
+    호영 : 부채
+    제로 : 태도/대검
+    */
 
     if(emblem_adventurer.indexOf(selected_job) != -1) {
         emblem_img.css("background-image", item_img_path + "emblem_adventurer" + path_end);
@@ -110,12 +142,16 @@ var set_equip_img = function() {
 
     if(poket_str.indexOf(selected_job) != -1) {
         poket_img.css("background-image", item_img_path + "poket_str" + path_end);
+        arcane_stat_txt_img.css("background-image", "url('image/arcane_win/str.png')");
     } else if(poket_dex.indexOf(selected_job) != -1) {
         poket_img.css("background-image", item_img_path + "poket_dex" + path_end);
+        arcane_stat_txt_img.css("background-image", "url('image/arcane_win/dex.png')");
     } else if(poket_int.indexOf(selected_job) != -1) {
         poket_img.css("background-image", item_img_path + "poket_int" + path_end);
+        arcane_stat_txt_img.css("background-image", "url('image/arcane_win/int.png')");
     } else if(poket_luk.indexOf(selected_job) != -1) {
         poket_img.css("background-image", item_img_path + "poket_luk" + path_end);
+        arcane_stat_txt_img.css("background-image", "url('image/arcane_win/luk.png')");
     }
 }
 
@@ -303,7 +339,6 @@ $(document).ready(function() {
     
     $("#adventurer_select_btn").click(function() {
         if(isJobSelected == true) {
-            $("#job_popup_area").css("display", "block");
             $("#job_select_popup").css("display", "block");
         } else if(isJobSelected == false) {
             alert("직업을 선택해주세요.");
@@ -314,7 +349,6 @@ $(document).ready(function() {
 
     $(".etc_select_btn").click(function() {
         if(isJobSelected == true) {
-            $("#job_popup_area").css("display", "block");
             $("#job_select_popup").css("display", "block");
         } else {
             alert("직업을 선택해주세요.");
@@ -322,15 +356,21 @@ $(document).ready(function() {
     });
 
     $("#job_cancel_btn, #xenon_ok_btn").click(function() {
-        if($(".etc_select_popup").css("display") == "block") {
+        if($("#adventurer_select_popup").css("display") == "block") {
+            $("#job_select_popup").css("display", "none");
+        } else if($("#cygnus_select_popup").css("display") == "block") {
+            $("#job_select_popup").css("display", "none");
+        } else if($("#resistance_select_popup").css("display") == "block") {
             $("#job_select_popup").css("display", "none");
         } else {
+            $("#job_popup_area").css("display", "none");
             $("#job_select_popup").css("display", "none");
             $("#xenon_select_popup").css("display", "none");
         }
     });
 
     $(".etc_cancel_btn").click(function() {
+        $(".select_disabled").text("- 직업군 -");
         $("#job_popup_area").css("display", "none");
         $(".etc_select_popup").css("display", "none");
         $(".hide_selectbox").css("display", "none");
